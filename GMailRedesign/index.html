@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gmail Redesign</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600|Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600|Roboto:100,300,400,500,700,900"
+          rel="stylesheet">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/material.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -16,23 +17,33 @@
 <div class="mainContainer">
     <div class="row no-margin">
         <div class="emailApp">
-            <div class="col no-gutter hide-on-med-and-down left l2 fullHeight sidebar">
+            <div class="col no-gutter hide-on-med-and-down l2 fullHeight sidebar">
                 <!--Title-->
                 <div class="sideBarContent">
                     <span class="mainTitle roboto"><i class="material-icons sub ">mail_outline</i> Mail</span>
+
+                    <!--Compose-->
+                    <div class="compose_button roboto">Compose</div>
+
+                    <!--labels-->
+                    <ul class="categorySet list">
+                        <li class="active label"><label class="emailLabel">Inbox</label></li>
+                        <li class="label"><label class="emailLabel">Important</label></li>
+                        <li class="label"><label class="emailLabel">Sent</label></li>
+                        <li class="label"><label class="emailLabel">Drafts</label></li>
+                        <li class="label"><label class="emailLabel">Trash</label></li>
+                    </ul>
+                    <div class="divider"></div>
+
+                    <div class="labelSet"><div class="labelSetTitle">Labels</div> <div class="addLabel">+</div></div>
+                    <ul class="labelList">
+                        <li class="label"><label class="categoryLabel">Family</label><div class="labelColor pink"></div></li>
+                        <li class="label"><label class="categoryLabel">Friends</label><div class="labelColor lime"></div></li>
+                        <li class="label"><label class="categoryLabel">Business</label><div class="labelColor blue"></div></li>
+                    </ul>
+                    <div class="divider"></div>
                 </div>
 
-                <!--Compose-->
-                <div class="compose_button roboto">Compose</div>
-
-                <!--labels-->
-                <ul class="labelSet">
-                    <li class="active"><label class="emailLabel">Inbox</label></li>
-                    <li><label class="emailLabel">Important</label></li>
-                    <li><label class="emailLabel">Sent</label></li>
-                    <li><label class="emailLabel">Drafts</label></li>
-                    <li><label class="emailLabel">Trash</label></li>
-                </ul>
             </div>
             <div class="col no-gutter s10 m8 l4 emailContent fullHeight">
                 <div class="emailListContent">test</div>
