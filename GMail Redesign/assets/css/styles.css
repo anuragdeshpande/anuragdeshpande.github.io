@@ -1,55 +1,115 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.uppercase
-{
-    text-transform: uppercase;
-}
+* {
+  margin: 0;
+  padding: 0; }
+
+.roboto {
+  font-family: 'Roboto', sans-serif; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.row.no-margin {
+  margin: 0; }
+
 .col.no-gutter {
-    padding-left: 0;
-    padding-right: 0;
-}
+  padding-left: 0;
+  padding-right: 0; }
 
-.large-6
-{
-    font-size: 2.7rem;
-}
+.large-6 {
+  font-size: 2.7rem; }
 
-.large-2
-{
-    font-size: 1.5rem;
-}
+.large-2 {
+  font-size: 1.5rem; }
 
-.thin-1
-{
-    font-weight:100;
-}
+.thin-1 {
+  font-weight: 100; }
 
-.thin-2
-{
-    font-weight:200;
-}
+.thin-2 {
+  font-weight: 200; }
 
-.thin-3
-{
-    font-weight:300;
-}
+.thin-3 {
+  font-weight: 300; }
 
-body
-{
-    background: #E0E0E0;
-}
+body {
+  background: #E0E0E0; }
 
-.profile
-{
-    text-align: justify;
-    padding: 15px;
-    position: relative;
-    top:20px;
-}
-.description
-{
-    position: relative;
-    top:45px;
-}
+.profile {
+  text-align: justify;
+  padding: 15px;
+  position: relative;
+  top: 20px; }
+
+.description {
+  position: relative;
+  top: 45px; }
+
+.sub {
+  vertical-align: sub; }
+
+.fullHeight {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
+
+.sidebar {
+  padding: 20px 0 0 30px;
+  background-color: #1E2126; }
+
+.sideBarContent {
+  position: relative;
+  top: 31px;
+  width: 100%;
+  text-align: center;
+  font-size: 27px;
+  line-height: 1.3em;
+  color: #A180D1;
+  font-weight: 300; }
+
+.sideBarContent > .mainTitle > i {
+  font-size: 35px; }
+
+.mainTitle {
+  margin-left: -35px; }
+
+.emailContent {
+  background-color: #FFFFFF; }
+
+.emailBody {
+  background-color: #d4d4d4; }
+
+.compose_button {
+  position: relative;
+  color: #A180D1;
+  padding: 11px;
+  border: 2px solid #A180D1;
+  border-radius: 29px;
+  top: 70px;
+  width: 143px;
+  left: 43px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold; }
+
+.labelSet {
+  color: #d4d4d4;
+  position: relative;
+  top: 100px;
+  font-size: 14px; }
+
+li {
+  position: relative;
+  list-style: none;
+  height: 35px;
+  padding: 6px 0; }
+
+li.active {
+  background-color: rgba(212, 212, 212, 0.15); }
+  li.active .emailLabel {
+    color: #FFFFFF; }
+
+.emailLabel {
+  font-size: 14px;
+  margin-left: 65px; }
+
+/*# sourceMappingURL=styles.css.map */

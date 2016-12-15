@@ -5,9 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GMail Redesign</title>
+    <title>Gmail Redesign</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600|Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/material.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">-->
 </head>
 <body>
+<div class="mainContainer">
+    <div class="row no-margin">
+        <div class="emailApp">
+            <div class="col no-gutter hide-on-med-and-down left l2 fullHeight sidebar">
+                <!--Title-->
+                <div class="sideBarContent">
+                    <span class="mainTitle roboto"><i class="material-icons sub ">mail_outline</i> Mail</span>
+                </div>
 
+                <!--Compose-->
+                <div class="compose_button roboto">Compose</div>
+
+                <!--labels-->
+                <ul class="labelSet">
+                    <li class="active"><label class="emailLabel">Inbox</label></li>
+                    <li><label class="emailLabel">Important</label></li>
+                    <li><label class="emailLabel">Sent</label></li>
+                    <li><label class="emailLabel">Drafts</label></li>
+                    <li><label class="emailLabel">Trash</label></li>
+                </ul>
+            </div>
+            <div class="col no-gutter s10 m8 l4 emailContent fullHeight">
+                <div class="emailListContent">test</div>
+            </div>
+            <div class="col no-gutter hide-on-med-and-down l6 emailBody fullHeight">
+                <div class="emailBodyContent">
+                    Test
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </body>
 </html>

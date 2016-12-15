@@ -1,0 +1,95 @@
+@import "snippets";
+@import "colors";
+@import "fonts";
+@import "margins";
+.fullHeight
+{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar
+{
+  padding: 20px 0 0 30px;
+  background-color: $sidebarBlack;
+}
+
+.sideBarContent
+{
+  position: relative;
+  top: $marginMainTop;
+  width: 100%;
+  text-align: center;
+  font-size: $fontMainHeading;
+  line-height: 1.3em;
+  color: $purplePink;
+  font-weight: 300;
+}
+
+.sideBarContent>.mainTitle>i
+{
+  font-size: 35px;
+}
+
+.mainTitle
+{
+  margin-left: -35px;
+}
+
+.emailContent
+{
+  background-color: $white;
+}
+
+.emailBody
+{
+  background-color: $middleGrey;
+}
+
+.compose_button
+{
+  position: relative;
+  color: $purplePink;
+  padding: 11px;
+  border: 2px solid $purplePink;
+  border-radius: 29px;
+  top: 70px;
+  width: 143px;
+  left: $marginSidebarLeftIcon;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: $fontSidebar;
+  font-weight: bold;
+}
+
+.labelSet
+{
+  color: $middleGrey;
+  position: relative;
+  top: 100px;
+  font-size: 14px;
+}
+
+li
+{
+  position: relative;
+  list-style: none;
+  height: 35px;
+  padding: 6px 0;
+}
+
+
+li.active
+{
+  background-color: rgba($middleGrey, 0.15);
+  .emailLabel {
+    color: $white;
+  }
+}
+
+.emailLabel
+{
+  font-size: 14px;
+  margin-left: 65px;
+}
