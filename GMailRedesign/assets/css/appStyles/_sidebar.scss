@@ -62,7 +62,6 @@ li.label:hover
 
 .emailLabel
 {
-  margin-left: 63px;
   font-size: 14px;
 }
 .active
@@ -81,14 +80,16 @@ li.label:hover
   position: relative;
   margin: auto;
 }
+
+.labelSet
+{
+  margin-top: 30px;
+}
 .labelSetTitle
 {
   color: $darkGrey;
   text-transform: uppercase;
-  margin-left: 63px;
-  margin-top: 30px;
   padding: 6px 0;
-  width: 43%;
 }
 .labelSetTitle,.addLabel
 {
@@ -108,9 +109,10 @@ li.label:hover
 
 .labelColor
 {
-  width: 10px;
+  width: 10px !important;
   height: 10px;
   border-radius: 50%;
+  margin-top: 5px;
 }
 .pink
 {
@@ -134,8 +136,14 @@ li.label:hover
 {
   display: inline-block;
 }
+
 .categoryLabel
 {
   @extend .emailLabel;
-  width: 43%;
+  text-align: left;
+}
+
+.side-nav li
+{
+  line-height: normal !important;
 }

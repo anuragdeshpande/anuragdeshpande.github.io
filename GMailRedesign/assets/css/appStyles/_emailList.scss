@@ -1,3 +1,8 @@
+.sectionTitle
+{
+  margin-top: 17px;
+  margin-bottom: 34px;
+}
 .emailContent
 {
   background-color: $lightGrey;
@@ -11,6 +16,11 @@
 .icon,.link
 {
   display: inline-block;
+}
+
+.button-collapse
+{
+  vertical-align: bottom;
 }
 
 .link,.link:visited, .link:hover,.link:active
@@ -105,7 +115,7 @@
 .mail
 {
   border-left: 3px solid transparent ;
-  cursor: pointer;
+
 }
 
 .mail:hover
@@ -117,5 +127,9 @@
 {
   border-left: 7px solid $purplePink;
   background-color: rgba(#4D545D, 0.1);
+}
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea
+{
+  margin-bottom: 0 !important;
 }
 
