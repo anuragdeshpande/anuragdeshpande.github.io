@@ -63,69 +63,849 @@
 
 
             <!--Email List Begins-->
-            <div class="col no-gutter s12 m4 l5 emailContent fullHeight">
+            <div class="col no-gutter s12 m5 l5 emailContent fullHeight">
                 <div class="emailListContent">
-                    <div class="sectionTitle mainBarContent">
-                        <div id="slide-out" class="side-nav hide-on-large-only sidebar">
-                            <div class="mainBarContent">
-                                <div class="mainTitle roboto center-align"><i class="material-icons sub icon">mail_outline</i> Mail</div>
+                    <div class="mailList">
+                        <div class="sectionTitle mainBarContent center-align">
 
-                                <!--Compose-->
-                                <div class="row">
-                                    <div class="compose_button roboto ">Compose</div>
+
+                            <!--slideout navigation begins-->
+                            <div id="slide-out" class="side-nav hide-on-large-only sidebar">
+                                <div class="mainBarContent">
+                                    <div class="mainTitle roboto center-align"><i class="material-icons sub icon">mail_outline</i>
+                                        Mail
+                                    </div>
+
+                                    <!--Compose-->
+                                    <div class="row">
+                                        <div class="compose_button roboto ">Compose</div>
+                                    </div>
+
+                                    <!--labels-->
+                                    <ul class="categorySet list">
+                                        <li class="active label"><label class="emailLabel">Inbox</label></li>
+                                        <li class="label"><label class="emailLabel">Important</label></li>
+                                        <li class="label"><label class="emailLabel">Sent</label></li>
+                                        <li class="label"><label class="emailLabel">Drafts</label></li>
+                                        <li class="label"><label class="emailLabel">Trash</label></li>
+                                    </ul>
+                                    <div class="divider"></div>
+
+                                    <div class="labelSet">
+                                        <div class="labelSetTitle">Labels</div>
+                                        <div class="addLabel">+</div>
+                                    </div>
+                                    <ul class="labelList">
+                                        <li class="label"><label class="categoryLabel">Family</label>
+                                            <div class="labelColor pink"></div>
+                                        </li>
+                                        <li class="label"><label class="categoryLabel">Friends</label>
+                                            <div class="labelColor lime"></div>
+                                        </li>
+                                        <li class="label"><label class="categoryLabel">Business</label>
+                                            <div class="labelColor blue"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="divider"></div>
                                 </div>
-
-                                <!--labels-->
-                                <ul class="categorySet list">
-                                    <li class="active label"><label class="emailLabel">Inbox</label></li>
-                                    <li class="label"><label class="emailLabel">Important</label></li>
-                                    <li class="label"><label class="emailLabel">Sent</label></li>
-                                    <li class="label"><label class="emailLabel">Drafts</label></li>
-                                    <li class="label"><label class="emailLabel">Trash</label></li>
-                                </ul>
-                                <div class="divider"></div>
-
-                                <div class="labelSet">
-                                    <div class="labelSetTitle">Labels</div>
-                                    <div class="addLabel">+</div>
-                                </div>
-                                <ul class="labelList">
-                                    <li class="label"><label class="categoryLabel">Family</label>
-                                        <div class="labelColor pink"></div>
-                                    </li>
-                                    <li class="label"><label class="categoryLabel">Friends</label>
-                                        <div class="labelColor lime"></div>
-                                    </li>
-                                    <li class="label"><label class="categoryLabel">Business</label>
-                                        <div class="labelColor blue"></div>
-                                    </li>
-                                </ul>
-                                <div class="divider"></div>
                             </div>
+                            <!--slideout navigation ends-->
+
+
+                            <div class="titlebar">
+                                <a href="#" data-activates="slide-out"
+                                   class="button-collapse hide-on-large-only inline-block"><i
+                                        class="material-icons deep-purple-text">menu</i></a>
+                                <a class='dropdown-button link inline-block' href='#' data-constrainwidth="false"
+                                   data-activates='dropdown1'>Inbox <i
+                                        class="material-icons sub">keyboard_arrow_down</i></a>
+                                <div class="input-field no-margin inline-block searchField">
+                                    <input type="text" placeholder="Search"
+                                           class="right hide-on-med-and-down no-margin input-field-search">
+                                </div>
+                            </div>
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li><a href="#!" class="deep-purple-text truncate">Folder - 1</a></li>
+                                <li><a href="#!" class="deep-purple-text truncate">Folder - 2</a></li>
+                                <li><a href="#!" class="deep-purple-text truncate">Folder - 3</a></li>
+                            </ul>
                         </div>
-                        <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i
-                                class="material-icons">menu</i></a>
-                        <div class="titlebar">
-                            <a class='dropdown-button link' href='#' data-constrainwidth="false"
-                               data-activates='dropdown1'>Inbox <i
-                                    class="material-icons sub">keyboard_arrow_down</i></a>
-                            <input type="text" placeholder="Search" class="searchField right hide-on-med-and-down">
-                        </div>
-                        <input type="text" placeholder="Search" class="show-on-medium-and-down hide-on-large-only">
-                        <ul id='dropdown1' class='dropdown-content'>
-                            <li><a href="#!" class="deep-purple-text truncate">Boss</a></li>
-                            <li><a href="#!" class="deep-purple-text truncate">Bills</a></li>
-                            <li><a href="#!" class="deep-purple-text truncate">University</a></li>
-                        </ul>
+                        <div class="input-field center-align"><input type="text" placeholder="Search"
+                                                                     class="hide-on-large-only small-search"></div>
                     </div>
                 </div>
+                <div class="divider"></div>
+
+
+                <!--Mails Begin-->
+                <div class="mailWrapper">
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail activeMail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mail">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s2">
+                                <div class="selectBox inline-block">
+                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                                    <label for="email-1"></label>
+                                </div>
+                                <div class="star inline-block">
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                                <div class="trash inline-block">
+                                    <i class="material-icons">delete</i>
+                                </div>
+                            </div>
+                            <div class="senderDetails col s3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
+                            </div>
+                            <div class="subjectAndBody col s5 truncate">
+                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
+                                </div>
+                                <div class="mailBody inline-block">Design of the ...</div>
+                            </div>
+                            <div class="dateRecieved inline-block col s2">
+                                <div class="date">Mar 28</div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+
+
+                </div>
+                <!--mails end-->
             </div>
             <!--Email List Ends-->
 
 
             <div class="col no-gutter hide-on-med-and-down l5 emailBody fullHeight">
                 <div class="emailBodyContent">
-                    Test
+
                 </div>
             </div>
         </div>

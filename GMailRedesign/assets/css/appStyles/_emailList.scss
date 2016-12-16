@@ -1,6 +1,7 @@
 .emailContent
 {
   background-color: $lightGrey;
+  overflow-y: scroll;
 }
 .dropdown-content
 {
@@ -19,20 +20,102 @@
   color: $purplePink;
 }
 
-.sectionTitle
+.small-search
 {
-  margin-left: $marginSidebarLeftIcon;
+  width: 80% !important;
 }
-.titlebar
-{
-  width: 100%;
-}
+
 
 .searchField
 {
-  width: 40% !important;
+  width: 70%;
+  .input-field-search
+  {
+    width: 85%;
+    margin-right: 10px;
+  }
+}
+
+.mailCheck[type="checkbox"].filled-in:checked + label:after{
+  border: 2px solid $purplePink;
+  background-color: $purplePink;
+}
+[type="checkbox"] + label
+{
+  padding-left: 0 !important;
+  -webkit-transform: scale(0.70);
+  -moz-transform: scale(0.70);
+  -ms-transform: scale(0.70);
+  -o-transform: scale(0.70);
+  transform: scale(0.70);
+}
+
+[type="checkbox"].filled-in:not(:checked) + label:after
+{
+  border: 2px solid $middleGrey !important;
+}
+
+[type="checkbox"].filled-in:not(:checked):hover + label:after
+{
+  border: 2px solid $sidebarBlack !important;
+}
+
+.star
+{
   position: relative;
-  margin-right: 50px !important;
-  margin-bottom: 0 !important;
+  margin-left: 20px;
+}
+.trash, .star
+{
+  i
+  {
+    font-size: 20px;
+    color: $middleGrey;
+    cursor: pointer;
+  }
+
+  i:hover
+  {
+    color: $sidebarBlack;
+    transition: all 0.2s;
+  }
+}
+
+.seperator
+{
+  font-weight:normal;
+}
+
+.trash, .star, .senderDetails, .dateRecieved, .subjectAndBody
+{
+  vertical-align: top;
+}
+
+.mailSubject
+{
+  font-weight:bold;
+}
+
+.mail
+{
+  padding-top:10px;
+  font-size: 13.8px;
+}
+
+.mail
+{
+  border-left: 3px solid transparent ;
+  cursor: pointer;
+}
+
+.mail:hover
+{
+  background-color: rgba(#4D545D, 0.1);
+}
+
+.activeMail
+{
+  border-left: 7px solid $purplePink;
+  background-color: rgba(#4D545D, 0.1);
 }
 

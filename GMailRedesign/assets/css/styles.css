@@ -5,7 +5,10 @@
   text-transform: uppercase; }
 
 .row.no-margin {
-  margin: 0; }
+  margin: 0 !important; }
+
+.no-margin {
+  margin: 0 !important; }
 
 .col.no-gutter {
   padding-left: 0;
@@ -53,6 +56,9 @@ body {
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #A180D1;
   box-shadow: 0 1px 0 0 #000; }
+
+.inline-block {
+  display: inline-block; }
 
 .mainBarContent {
   position: relative;
@@ -109,7 +115,7 @@ li.label:hover {
   .active .emailLabel, .active .categoryLabel {
     color: #FFFFFF; }
 
-.divider {
+.sidebar .divider {
   background-color: #27292b;
   width: 75%;
   position: relative;
@@ -155,7 +161,8 @@ li.label:hover {
   width: 43%; }
 
 .emailContent {
-  background-color: #FCFCFD; }
+  background-color: #FCFCFD;
+  overflow-y: scroll; }
 
 .dropdown-content {
   background-color: #FFFFFF; }
@@ -168,17 +175,68 @@ li.label:hover {
   vertical-align: bottom;
   color: #A180D1; }
 
-.sectionTitle {
-  margin-left: 63px; }
-
-.titlebar {
-  width: 100%; }
+.small-search {
+  width: 80% !important; }
 
 .searchField {
-  width: 40% !important;
+  width: 70%; }
+  .searchField .input-field-search {
+    width: 85%;
+    margin-right: 10px; }
+
+.mailCheck[type="checkbox"].filled-in:checked + label:after {
+  border: 2px solid #A180D1;
+  background-color: #A180D1; }
+
+[type="checkbox"] + label {
+  padding-left: 0 !important;
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  transform: scale(0.7); }
+
+[type="checkbox"].filled-in:not(:checked) + label:after {
+  border: 2px solid #d4d4d4 !important; }
+
+[type="checkbox"].filled-in:not(:checked):hover + label:after {
+  border: 2px solid #1E2126 !important; }
+
+.star {
   position: relative;
-  margin-right: 50px !important;
-  margin-bottom: 0 !important; }
+  margin-left: 20px; }
+
+.trash i, .star i {
+  font-size: 20px;
+  color: #d4d4d4;
+  cursor: pointer; }
+.trash i:hover, .star i:hover {
+  color: #1E2126;
+  transition: all 0.2s; }
+
+.seperator {
+  font-weight: normal; }
+
+.trash, .star, .senderDetails, .dateRecieved, .subjectAndBody {
+  vertical-align: top; }
+
+.mailSubject {
+  font-weight: bold; }
+
+.mail {
+  padding-top: 10px;
+  font-size: 13.8px; }
+
+.mail {
+  border-left: 3px solid transparent;
+  cursor: pointer; }
+
+.mail:hover {
+  background-color: rgba(77, 84, 93, 0.1); }
+
+.activeMail {
+  border-left: 7px solid #A180D1;
+  background-color: rgba(77, 84, 93, 0.1); }
 
 html, body {
   height: 100vh; }
