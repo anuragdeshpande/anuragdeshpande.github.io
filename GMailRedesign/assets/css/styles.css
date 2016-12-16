@@ -42,38 +42,39 @@ body {
 .sub {
   vertical-align: sub; }
 
-html, body {
-  height: 100vh; }
+.icon {
+  font-size: 36px; }
 
-.fullHeight {
-  height: 100vh; }
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #A180D1; }
 
-.sideBarContent {
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #A180D1;
+  box-shadow: 0 1px 0 0 #000; }
+
+.mainBarContent {
   position: relative;
   margin-top: 31px; }
 
 .sidebar {
-  background-color: #1E2126;
-  width: 100%; }
+  background-color: #1E2126; }
 
 .mainTitle {
   font-size: 27px;
-  color: #A180D1;
-  margin-left: 63px; }
+  color: #A180D1; }
 
 .mainTitle > i {
-  font-size: 36px;
-  vertical-align: sub;
   color: #A180D1; }
 
 .compose_button {
   position: relative;
-  margin-top: 35px;
+  margin: 35px auto 0 auto;
   color: #A180D1;
   border: 2px solid #A180D1;
-  width: 142px;
   padding: 10px;
-  margin-left: 43px;
+  width: 65%;
   border-radius: 50px;
   text-align: center;
   text-transform: uppercase;
@@ -90,8 +91,7 @@ html, body {
   margin-bottom: 40px; }
 
 li.label {
-  height: 34px;
-  padding: 6px 0;
+  padding: 8px 0;
   cursor: pointer; }
 
 li.label:hover {
@@ -121,7 +121,7 @@ li.label:hover {
   margin-left: 63px;
   margin-top: 30px;
   padding: 6px 0;
-  width: 110px; }
+  width: 43%; }
 
 .labelSetTitle, .addLabel {
   display: inline-block;
@@ -152,6 +152,38 @@ li.label:hover {
   display: inline-block; }
 
 .categoryLabel {
-  width: 110px; }
+  width: 43%; }
+
+.emailContent {
+  background-color: #FCFCFD; }
+
+.dropdown-content {
+  background-color: #FFFFFF; }
+
+.icon, .link {
+  display: inline-block; }
+
+.link, .link:visited, .link:hover, .link:active {
+  font-size: 27px;
+  vertical-align: bottom;
+  color: #A180D1; }
+
+.sectionTitle {
+  margin-left: 63px; }
+
+.titlebar {
+  width: 100%; }
+
+.searchField {
+  width: 40% !important;
+  position: relative;
+  margin-right: 50px !important;
+  margin-bottom: 0 !important; }
+
+html, body {
+  height: 100vh; }
+
+.fullHeight {
+  height: 100vh; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,38 @@
+.emailContent
+{
+  background-color: $lightGrey;
+}
+.dropdown-content
+{
+  background-color: $white;
+}
+
+.icon,.link
+{
+  display: inline-block;
+}
+
+.link,.link:visited, .link:hover,.link:active
+{
+  font-size: 27px;
+  vertical-align: bottom;
+  color: $purplePink;
+}
+
+.sectionTitle
+{
+  margin-left: $marginSidebarLeftIcon;
+}
+.titlebar
+{
+  width: 100%;
+}
+
+.searchField
+{
+  width: 40% !important;
+  position: relative;
+  margin-right: 50px !important;
+  margin-bottom: 0 !important;
+}
+

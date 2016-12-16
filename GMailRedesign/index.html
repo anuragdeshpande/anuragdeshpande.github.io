@@ -17,13 +17,18 @@
 <div class="mainContainer">
     <div class="row no-margin">
         <div class="emailApp">
+            <!--Sidebar Begins-->
             <div class="col no-gutter hide-on-med-and-down l2 fullHeight sidebar">
                 <!--Title-->
-                <div class="sideBarContent">
-                    <span class="mainTitle roboto"><i class="material-icons sub ">mail_outline</i> Mail</span>
+                <div class="mainBarContent">
+                    <div class="mainTitle roboto center-align">
+                        <i class="material-icons sub icon">mail_outline</i> Mail
+                    </div>
 
                     <!--Compose-->
-                    <div class="compose_button roboto">Compose</div>
+                    <div class="row">
+                        <div class="compose_button roboto l6 m6 s6 offset-l2 offset-m2 offset-s2 ">Compose</div>
+                    </div>
 
                     <!--labels-->
                     <ul class="categorySet list">
@@ -35,20 +40,90 @@
                     </ul>
                     <div class="divider"></div>
 
-                    <div class="labelSet"><div class="labelSetTitle">Labels</div> <div class="addLabel">+</div></div>
+                    <div class="labelSet">
+                        <div class="labelSetTitle">Labels</div>
+                        <div class="addLabel">+</div>
+                    </div>
                     <ul class="labelList">
-                        <li class="label"><label class="categoryLabel">Family</label><div class="labelColor pink"></div></li>
-                        <li class="label"><label class="categoryLabel">Friends</label><div class="labelColor lime"></div></li>
-                        <li class="label"><label class="categoryLabel">Business</label><div class="labelColor blue"></div></li>
+                        <li class="label"><label class="categoryLabel">Family</label>
+                            <div class="labelColor pink"></div>
+                        </li>
+                        <li class="label"><label class="categoryLabel">Friends</label>
+                            <div class="labelColor lime"></div>
+                        </li>
+                        <li class="label"><label class="categoryLabel">Business</label>
+                            <div class="labelColor blue"></div>
+                        </li>
                     </ul>
                     <div class="divider"></div>
                 </div>
 
             </div>
-            <div class="col no-gutter s10 m8 l4 emailContent fullHeight">
-                <div class="emailListContent">test</div>
+            <!--Sidebar Ends-->
+
+
+            <!--Email List Begins-->
+            <div class="col no-gutter s12 m4 l5 emailContent fullHeight">
+                <div class="emailListContent">
+                    <div class="sectionTitle mainBarContent">
+                        <div id="slide-out" class="side-nav hide-on-large-only sidebar">
+                            <div class="mainBarContent">
+                                <div class="mainTitle roboto center-align"><i class="material-icons sub icon">mail_outline</i> Mail</div>
+
+                                <!--Compose-->
+                                <div class="row">
+                                    <div class="compose_button roboto ">Compose</div>
+                                </div>
+
+                                <!--labels-->
+                                <ul class="categorySet list">
+                                    <li class="active label"><label class="emailLabel">Inbox</label></li>
+                                    <li class="label"><label class="emailLabel">Important</label></li>
+                                    <li class="label"><label class="emailLabel">Sent</label></li>
+                                    <li class="label"><label class="emailLabel">Drafts</label></li>
+                                    <li class="label"><label class="emailLabel">Trash</label></li>
+                                </ul>
+                                <div class="divider"></div>
+
+                                <div class="labelSet">
+                                    <div class="labelSetTitle">Labels</div>
+                                    <div class="addLabel">+</div>
+                                </div>
+                                <ul class="labelList">
+                                    <li class="label"><label class="categoryLabel">Family</label>
+                                        <div class="labelColor pink"></div>
+                                    </li>
+                                    <li class="label"><label class="categoryLabel">Friends</label>
+                                        <div class="labelColor lime"></div>
+                                    </li>
+                                    <li class="label"><label class="categoryLabel">Business</label>
+                                        <div class="labelColor blue"></div>
+                                    </li>
+                                </ul>
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                        <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i
+                                class="material-icons">menu</i></a>
+                        <div class="titlebar">
+                            <a class='dropdown-button link' href='#' data-constrainwidth="false"
+                               data-activates='dropdown1'>Inbox <i
+                                    class="material-icons sub">keyboard_arrow_down</i></a>
+                            <input type="text" placeholder="Search" class="searchField right hide-on-med-and-down">
+                        </div>
+                        <input type="text" placeholder="Search" class="show-on-medium-and-down hide-on-large-only">
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li><a href="#!" class="deep-purple-text truncate">Boss</a></li>
+                            <li><a href="#!" class="deep-purple-text truncate">Bills</a></li>
+                            <li><a href="#!" class="deep-purple-text truncate">University</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col no-gutter hide-on-med-and-down l6 emailBody fullHeight">
+            <!--Email List Ends-->
+
+
+            <div class="col no-gutter hide-on-med-and-down l5 emailBody fullHeight">
                 <div class="emailBodyContent">
                     Test
                 </div>
@@ -60,5 +135,9 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script type="text/javascript">
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+</script>
 </body>
 </html>

@@ -1,0 +1,141 @@
+.mainBarContent
+{
+  position: relative;
+  margin-top:$marginMainTop;
+}
+
+.sidebar {
+  background-color: $sidebarBlack;
+}
+.mainTitle
+{
+  font-size: $fontMainHeading;
+  color: $purplePink;
+}
+.mainTitle>i
+{
+  color: $purplePink;
+}
+
+.compose_button
+{
+  position: relative;
+  margin: 35px auto 0 auto;
+  color: $purplePink;
+  border: 2px solid $purplePink;
+  padding: 10px;
+  width: 65%;
+  border-radius: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.compose_button:hover
+{
+  background-color: $purplePink;
+  color: $sidebarBlack;
+}
+
+.list
+{
+  list-style: none;
+  margin-top: 33px;
+  margin-bottom: 40px;
+}
+li.label
+{
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+li.label:hover
+{
+  background-color: rgba($lightGrey, 0.04);
+  .emailLabel
+  {
+    color: $white ;
+  }
+  transition: all 0.5s;
+}
+
+.emailLabel
+{
+  margin-left: 63px;
+  font-size: 14px;
+}
+.active
+{
+  background-color: rgba($lightGrey, 0.04);
+  .emailLabel
+  {
+    color: $white ;
+  }
+}
+
+.divider
+{
+  background-color: $dividerColor;
+  width: 75%;
+  position: relative;
+  margin: auto;
+}
+.labelSetTitle
+{
+  color: $darkGrey;
+  text-transform: uppercase;
+  margin-left: 63px;
+  margin-top: 30px;
+  padding: 6px 0;
+  width: 43%;
+}
+.labelSetTitle,.addLabel
+{
+  display: inline-block;
+  color: $darkGrey;
+  font-size: 14px;
+}
+
+.addLabel
+{
+  cursor: pointer;
+}
+.addLabel:hover
+{
+  color: white;
+}
+
+.labelColor
+{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.pink
+{
+  @extend .labelColor;
+  background-color: $pink;
+}
+
+.lime
+{
+  @extend .labelColor;
+  background-color: $lime;
+}
+
+.blue
+{
+  @extend .labelColor;
+  background-color: $blue;
+}
+
+.categoryLabel,.labelColor
+{
+  display: inline-block;
+}
+.categoryLabel
+{
+  @extend .emailLabel;
+  width: 43%;
+}
