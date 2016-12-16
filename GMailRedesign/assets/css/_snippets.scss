@@ -81,3 +81,23 @@ body {
 {
   display: inline-block;
 }
+
+.vtop
+{
+  vertical-align: top;
+}
+
+.accentText
+{
+  color: $purplePink;
+}
+
+.underline:hover
+{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.raleway
+{
+  font-family: 'Raleway', sans-serif;
+}

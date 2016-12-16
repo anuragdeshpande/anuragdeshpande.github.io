@@ -60,6 +60,19 @@ body {
 .inline-block {
   display: inline-block; }
 
+.vtop {
+  vertical-align: top; }
+
+.accentText {
+  color: #A180D1; }
+
+.underline:hover {
+  cursor: pointer;
+  text-decoration: underline; }
+
+.raleway {
+  font-family: 'Raleway', sans-serif; }
+
 .mainBarContent {
   position: relative;
   margin-top: 31px; }
@@ -237,6 +250,68 @@ li.label:hover {
 .activeMail {
   border-left: 7px solid #A180D1;
   background-color: rgba(77, 84, 93, 0.1); }
+
+.emailBody {
+  background-color: #EFEFEF;
+  overflow-y: scroll; }
+
+.emailBodyContent {
+  text-align: left;
+  width: 90%;
+  margin: auto; }
+
+.emailSubject {
+  font-size: 32px;
+  margin-top: 6%;
+  font-weight: bold;
+  color: #1E2126; }
+
+.threadCaption {
+  font-size: 12.5px; }
+
+.emailDate {
+  font-size: 12px;
+  color: #d4d4d4; }
+
+.responsemail {
+  background-color: #FFFFFF;
+  padding: 10px 20px 20px 20px !important;
+  border: 1px solid #d0d0d0;
+  margin-bottom: 5%; }
+
+.head {
+  font-size: 14px;
+  padding-bottom: 10px; }
+
+.fromto {
+  font-weight: bold;
+  text-transform: capitalize; }
+
+.fromto > i {
+  margin: 0 10px; }
+
+.responseBody {
+  padding: 15px 0;
+  text-align: justify;
+  font-size: 13px; }
+
+.emailActions {
+  width: 100%;
+  text-align: right; }
+
+.actionIcon {
+  margin: 0 8px; }
+
+.actionIcon > i {
+  font-size: 18px;
+  color: grey;
+  cursor: pointer; }
+
+.actionIcon > i:hover {
+  color: #A180D1; }
+
+.emailDate {
+  color: grey; }
 
 html, body {
   height: 100vh; }
