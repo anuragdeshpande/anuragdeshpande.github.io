@@ -19,10 +19,12 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
     };
 
     // When callback is received, we need to process authentication.
-    $scope.signInCallback = function(authResult) {
-        $scope.$apply(function() {
-            $scope.processAuth(authResult);
-        });
+    $scope.signInCallback = function (authResult) {
+        setTimeout(function () {
+            $scope.$apply(function () {
+                $scope.processAuth(authResult);
+            });
+        }, 0);
     };
 
     // Render the sign in button.
