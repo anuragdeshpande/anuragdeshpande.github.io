@@ -49,5 +49,6 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
 
     $scope.logout = function () {
         gapi.auth.signOut();
+        console.log('Logged Out');
     }
 }]);
