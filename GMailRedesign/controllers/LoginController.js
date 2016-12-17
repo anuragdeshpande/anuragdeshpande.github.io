@@ -10,8 +10,6 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
             // Successful sign in.
             $scope.signedIn = true;
             console.log('Successfully signed in');
-            gapi.auth.signOut();
-            console.log('Logged Out');
 
         } else if(authResult['error']) {
             // Error while signing in.
