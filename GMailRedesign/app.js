@@ -51,8 +51,6 @@
                 {
                     'callback': $scope.signInCallback, // Function handling the callback.
                     'clientid': '793225560426-to0jcpob9p2jklejgmp2iv0maumqe5to.apps.googleusercontent.com', // CLIENT_ID from developer console which has been explained earlier.
-                    'requestvisibleactions': 'http://schemas.google.com/AddActivity', // Visible actions, scope and cookie policy wont be described now,
-                                                                                      // as their explanation is available in Google+ API Documentation.
                     'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email',
                     'cookiepolicy': 'single_host_origin'
                 }
