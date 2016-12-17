@@ -44,4 +44,8 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
 
     // Call start function on load.
     $scope.start();
+
+    $scope.logout = function () {
+        gapi.auth.signOut();
+    }
 }]);
