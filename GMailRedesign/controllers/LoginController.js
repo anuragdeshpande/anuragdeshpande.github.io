@@ -1,54 +1,43 @@
-angular.module('swailMail').controller('LoginController', ['$scope', '$location', function ($scope, $location) {
-    // This flag we use to show or hide the button in our HTML.
-    $scope.signedIn = false;
+angular.module('swailMail').controller('LoginController', ['$scope', '$location', 'sharedScope', function ($scope, $location, $sharedScope) {
 
-    // Here we do the authentication processing and error handling.
-    // Note that authResult is a JSON object.
-    $scope.processAuth = function(authResult) {
-        // Do a check if authentication has been successful.
-        if(authResult['access_token']) {
-            // Successful sign in.
-            $scope.signedIn = true;
-            console.log('Successfully signed in');
-
-        } else if(authResult['error']) {
-            // Error while signing in.
-            $scope.signedIn = false;
-            $location.path('login');
-        }
-    };
-
-    // When callback is received, we need to process authentication.
-    $scope.signInCallback = function (authResult) {
-        setTimeout(function () {
-            $scope.$apply(function () {
-                $scope.processAuth(authResult);
-            });
-        }, 0);
-    };
-
-    // Render the sign in button.
-    $scope.renderSignInButton = function() {
-        gapi.signin.render('signInButton',
+    $scope.renderSignInButton = function ($sharedScope, $location) {
+        gapi.signin2.render('signInButton',
             {
-                'callback': $scope.signInCallback, // Function handling the callback.
-                'clientid': '793225560426-to0jcpob9p2jklejgmp2iv0maumqe5to.apps.googleusercontent.com', // CLIENT_ID from developer console which has been explained earlier.
-                'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email',
-                'cookiepolicy': 'single_host_origin'
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': function (googleUser) {
+                    var profile = googleUser.getBasicProfile();
+                    $sharedScope.userdata.name = profile.getName();
+                    $sharedScope.userdata.imgUrl = profile.getImageUrl();
+                    $sharedScope.userdata.email = profile.getEmail();
+                    $sharedScope.userdata.id_token = googleUser.getAuthResponse().id_token;
+                    $sharedScope.isLoggedIn = true;
+                    if($sharedScope.isLoggedIn)
+                    {
+                        $location.path('mail');
+                    }
+                    else
+                    {
+                        console.log('Login is false');
+                        console.log($sharedScope);
+                    }
+                },
+                'onfailure': function (error) {
+                    console.log(error);
+                }
             }
         );
     };
 
-    // Start function in this example only renders the sign in button.
-    $scope.start = function() {
-        $scope.renderSignInButton();
+    $scope.logout = function () {
+        gapi.auth2.getAuthInstance().signOut().then(function () {
+            console.log('Signed Out');
+        });
     };
 
-    // Call start function on load.
-    $scope.start();
 
-    $scope.logout = function () {
-        gapi.auth.signOut();
-        console.log('Logged Out');
-    }
+    $scope.renderSignInButton($sharedScope, $location);
 }]);

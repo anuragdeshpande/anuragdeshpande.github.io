@@ -13,5 +13,9 @@
     <orderEntry type="library" name="angular-ui-router" level="application" />
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="platform" level="application" />
+    <orderEntry type="library" name="api" level="application" />
+    <orderEntry type="library" name="google-apps-script-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="google-closure-compiler-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="Platformm" level="application" />
   </component>
 </module>

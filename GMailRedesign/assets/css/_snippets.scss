@@ -17,6 +17,11 @@
 }
 
 .col.no-gutter {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.no-gutter {
   padding-left: 0;
   padding-right: 0;
 }
@@ -100,4 +105,9 @@ body {
 .raleway
 {
   font-family: 'Raleway', sans-serif;
+}
+
+.fullwidth
+{
+  width: 100%;
 }

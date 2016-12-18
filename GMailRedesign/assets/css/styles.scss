@@ -15,4 +15,18 @@ html,body
 {
   height: 100vh;
 }
+.halfHeight
+{
+  height: 50vh;
+}
+.background
+{
+  background: url("../img/background.jpg");
+  height: 100%;
+}
 
+.loginForm
+{
+  background: rgba($white, 0.5);
+  @extend .halfHeight;
+}

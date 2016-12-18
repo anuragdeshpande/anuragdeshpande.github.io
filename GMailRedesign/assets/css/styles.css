@@ -11,6 +11,10 @@
   margin: 0 !important; }
 
 .col.no-gutter {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.no-gutter {
   padding-left: 0;
   padding-right: 0; }
 
@@ -72,6 +76,9 @@ body {
 
 .raleway {
   font-family: 'Raleway', sans-serif; }
+
+.fullwidth {
+  width: 100%; }
 
 .mainBarContent {
   position: relative;
@@ -330,5 +337,15 @@ html, body {
 
 .fullHeight {
   height: 100vh; }
+
+.halfHeight, .loginForm {
+  height: 50vh; }
+
+.background {
+  background: url("../img/background.jpg");
+  height: 100%; }
+
+.loginForm {
+  background: rgba(255, 255, 255, 0.5); }
 
 /*# sourceMappingURL=styles.css.map */
