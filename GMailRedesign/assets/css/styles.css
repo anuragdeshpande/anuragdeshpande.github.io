@@ -345,7 +345,7 @@ html, body {
   height: 75vh; }
 
 .background {
-  background: url("../img/background.jpg");
+  background: url("../img/background.jpg") black;
   height: 100%;
   background-size: cover; }
 
