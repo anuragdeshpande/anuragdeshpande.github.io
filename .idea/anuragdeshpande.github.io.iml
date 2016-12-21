@@ -17,5 +17,7 @@
     <orderEntry type="library" name="google-apps-script-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="google-closure-compiler-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="Platformm" level="application" />
+    <orderEntry type="library" name="client" level="application" />
+    <orderEntry type="library" name="angular-cookies" level="application" />
   </component>
 </module>

@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('swailMail', ['ui.router']);
+    var app = angular.module('swailMail', ['ui.router', 'ngCookies']);
 
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider

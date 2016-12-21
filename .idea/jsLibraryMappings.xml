@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{Platformm, angular, angular-ui-router, api, google-apps-script-DefinitelyTyped, google-closure-compiler-DefinitelyTyped, jquery, jquery-2.1.1, jquery.matchHeight, material, materialize, platform}" />
+    <file url="PROJECT" libraries="{Platformm, angular, angular-cookies, angular-ui-router, api, client, google-apps-script-DefinitelyTyped, google-closure-compiler-DefinitelyTyped, jquery, jquery-2.1.1, jquery.matchHeight, material, materialize, platform}" />
   </component>
 </project>

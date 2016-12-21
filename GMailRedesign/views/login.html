@@ -2,7 +2,7 @@
     <div class="row no-margin fullwidth">
         <div class="col s12 m8 l6 offset-m2 offset-l3 loginForm">
             <div class="appWelcome">
-                <div class="row no-margin fullwidth center-align animated fadeInUp">
+                <div class="row no-margin fullwidth center-align">
                     <div class="inline-block appIcon">
                         <i class="material-icons medium">mail_outline</i>
                     </div>
@@ -14,10 +14,10 @@
             </div>
 
             <div class="authorizeEmailButton fullwidth center-align">
-                <button class="waves-effect btn-large raleway deep-purple animated fadeInDown">Authorize Email</button>
+                <button class="waves-effect btn-large raleway deep-purple" ng-click="handleAuthClick()">
+
+                    {{state}}</button>
             </div>
         </div>
     </div>
 </div>
-
-
