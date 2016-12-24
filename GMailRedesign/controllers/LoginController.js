@@ -1,12 +1,13 @@
-angular.module('swailMail').controller('LoginController', ['$scope', '$location', 'cookie', function ($scope, $location, $cookie) {
+angular.module('swailMail').controller('LoginController', ['$scope', '$location', 'cookie', '$timeout', function ($scope, $location, $cookie, $timeout) {
 
     var CLIENT_ID = '793225560426-to0jcpob9p2jklejgmp2iv0maumqe5to.apps.googleusercontent.com';
-    var SCOPES = ['https://mail.google.com/','https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/userinfo.email'];
+    var SCOPES = ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/userinfo.email'];
     var isFinished = 0;
     var waiting;
 
     $scope.state = 'Checking Authentication';
     $scope.isProcessing = true;
+
 
     function checkingAuth() {
         $scope.isProcessing = true;
@@ -23,7 +24,7 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
     $scope.handleAuthClick = function () {
 
         $scope.isProcessing = true;
-        $scope.state = 'Processing';
+        $scope.state = 'Requesting Authentication';
 
         gapi.auth.authorize(
             {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
@@ -35,6 +36,9 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
 
     function handleAuthResult(authResult) {
         if (authResult && !authResult.error) {
+            $scope.$apply(function () {
+               $scope.state = 'Authenticated!';
+            });
             gapi.client.load('gmail', 'v1', listLabels);
             gapi.client.load('plus', 'v1', function () {
                 gapi.client.plus.people.get({userId: 'me'}).execute(function (resp) {
@@ -68,6 +72,9 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
         });
 
         request.execute(function (resp) {
+            $scope.$apply(function () {
+                $scope.state = 'Fetching EMail and other details';
+            });
             $cookie.saveLabels(resp.labels);
             isFinished++;
         });
@@ -76,11 +83,11 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
 
     function wait() {
         if (isFinished === 2 || $cookie.getUserDetails().isLoggedIn) {
-            $location.path('mail').replace();
+            $location.path('/mail/inbox').replace();
             $scope.$apply();
         }
         else {
-            waiting = setTimeout(function () {
+            waiting = $timeout(function () {
                 wait()
             }, 100);
         }
@@ -88,9 +95,16 @@ angular.module('swailMail').controller('LoginController', ['$scope', '$location'
     }
 
     function clear() {
-        clearTimeout(waiting);
+        $timeout.cancel(waiting);
     }
 
+
     verifyAuthentication = checkingAuth;
+
+
+    if (verifyAuthentication == false) {
+        $scope.state = 'Login';
+        $scope.isProcessing = false;
+    }
 
 }]);

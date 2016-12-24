@@ -1,6 +1,25 @@
-<ul class="categorySet list">
-    <li class="label row no-margin" ng-repeat="label in emailLabels | orderBy:'name' | filter:'!_'">
-        <div class="col l6 offset-l2"><label class="emailLabel">{{label.name}}</label></div>
-    </li>
-</ul>
+<div class="divider"></div>
+<div class="categorySet list">
+    <a ng-href="#/mail/{{label.name|lowercase}}"
+       ng-class="{active: isActive('/mail/'+label.name)}"
+       class="emailLabel col s12"
+       ng-repeat="label in emailLabels | orderBy:'name' | filter:'!_'">
+        <span class="labelName col offset-s2">{{label.name|lowercase}}</span>
+    </a>
+</div>
+<div class="divider"></div>
+<div class="row no-margin">
+    <div class="labelSet">
+        <div class="labelSetTitle col l6 offset-l2">Labels</div>
+    </div>
+</div>
+<div class="categorySet labelList">
+    <a ng-repeat="category in emailLabels | filter: '_'"
+       ng-href="#/mail/{{category.name|lowercase}}"
+       ng-class="{active: isActive('/mail/'+category.name)}"
+       class="emailLabel col s12">
+        <span class="col s7 offset-s2 truncate">{{category.name}}</span>
+        <div class="labelColor pink col s1 offset-s1 no-gutter"></div>
+    </a>
+</div>
 <div class="divider"></div>

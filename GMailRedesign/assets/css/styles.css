@@ -102,28 +102,30 @@ body {
 
 .list {
   list-style: none;
-  margin-top: 33px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   height: 30vh;
   overflow-y: auto; }
 
-li.label {
+.categorySet .emailLabel, .categorySet .categoryLabel {
   padding: 8px 0;
   cursor: pointer; }
 
-li.label:hover {
-  background-color: rgba(252, 252, 253, 0.04);
+.categorySet .emailLabel:hover, .categorySet .categoryLabel:hover {
+  background-color: rgba(252, 252, 253, 0.1);
   transition: all 0.5s; }
-  li.label:hover .emailLabel, li.label:hover .categoryLabel {
+  .categorySet .emailLabel:hover .emailLabel, .categorySet .categoryLabel:hover .emailLabel, .categorySet .emailLabel:hover .categoryLabel, .categorySet .categoryLabel:hover .categoryLabel {
     color: #FFFFFF; }
 
 .emailLabel, .categoryLabel {
-  font-size: 14px; }
+  font-size: 14px;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6); }
 
 .active {
-  background-color: rgba(252, 252, 253, 0.04); }
-  .active .emailLabel, .active .categoryLabel {
-    color: #FFFFFF; }
+  background-color: rgba(252, 252, 253, 0.1);
+  color: #FFFFFF; }
 
 .sidebar .divider {
   background-color: #27292b;
@@ -173,6 +175,10 @@ li.label:hover {
 
 .side-nav li {
   line-height: normal !important; }
+
+.labelList {
+  height: 30vh;
+  overflow-y: auto; }
 
 .sectionTitle {
   margin-top: 17px;

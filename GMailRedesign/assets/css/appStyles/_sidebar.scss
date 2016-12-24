@@ -25,20 +25,20 @@
 .list
 {
   list-style: none;
-  margin-top: 33px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   height: 30vh;
   overflow-y: auto;
 }
-li.label
+.categorySet .emailLabel
 {
   padding: 8px 0;
   cursor: pointer;
 }
 
-li.label:hover
+.categorySet .emailLabel:hover
 {
-  background-color: rgba($lightGrey, 0.04);
+  background-color: rgba($lightGrey, 0.1);
   .emailLabel
   {
     color: $white ;
@@ -46,17 +46,18 @@ li.label:hover
   transition: all 0.5s;
 }
 
+
 .emailLabel
 {
   font-size: 14px;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: rgba($white, 0.6);
 }
 .active
 {
-  background-color: rgba($lightGrey, 0.04);
-  .emailLabel
-  {
-    color: $white ;
-  }
+  background-color: rgba($lightGrey, 0.1);
+  color: $white;
 }
 
 .sidebar .divider
@@ -132,4 +133,10 @@ li.label:hover
 .side-nav li
 {
   line-height: normal !important;
+}
+
+.labelList
+{
+  height: 30vh;
+  overflow-y: auto;
 }

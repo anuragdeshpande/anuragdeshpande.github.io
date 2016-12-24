@@ -1,6 +1,6 @@
-var verifyAuthentication;
+var verifyAuthentication = false;
 (function () {
-    var app = angular.module('swailMail', ['ui.router', 'ngCookies', 'ngRoute']);
+    var app = angular.module('swailMail', ['ui.router', 'ngCookies']);
 
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -10,7 +10,7 @@ var verifyAuthentication;
                 controller: 'LoginController'
             })
             .state('/mail', {
-                url: '/mail',
+                url: '/mail/:label',
                 templateUrl: 'views/mail.html',
                 controller: 'MailController'
             });
