@@ -1,6 +1,7 @@
 angular.module('swailMail').factory('cookie', ['$cookieStore', function ($cookieStore) {
     var userData =
         {name:'', image:'', emailID:'', isLoggedIn: false};
+    var labels = [];
 
     return {
         setUserDetails: function (data) {
@@ -12,6 +13,7 @@ angular.module('swailMail').factory('cookie', ['$cookieStore', function ($cookie
 
             $cookieStore.put('userDetails', userData);
             console.log('User Data is set');
+            console.log(userData);
         },
         getUserDetails: function () {
             return userData;
@@ -26,6 +28,12 @@ angular.module('swailMail').factory('cookie', ['$cookieStore', function ($cookie
             {
                 $cookieStore.remove(name);
             }
+        },
+        saveLabels: function (recievedLabels) {
+            labels = recievedLabels;
+        },
+        getLabels: function () {
+            return labels;
         }
 
     };

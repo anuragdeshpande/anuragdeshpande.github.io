@@ -1,0 +1,6 @@
+<ul class="categorySet list">
+    <li class="label row no-margin" ng-repeat="label in emailLabels | orderBy:'name' | filter:'!_'">
+        <div class="col l6 offset-l2"><label class="emailLabel">{{label.name}}</label></div>
+    </li>
+</ul>
+<div class="divider"></div>

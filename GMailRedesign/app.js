@@ -1,5 +1,6 @@
+var verifyAuthentication;
 (function () {
-    var app = angular.module('swailMail', ['ui.router', 'ngCookies']);
+    var app = angular.module('swailMail', ['ui.router', 'ngCookies', 'ngRoute']);
 
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $stateProvider

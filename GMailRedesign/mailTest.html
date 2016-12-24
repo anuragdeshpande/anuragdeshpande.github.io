@@ -1,3 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMail Test</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
 <div class="mainContainer">
     <div class="row no-margin">
         <div class="emailApp">
@@ -6,16 +19,59 @@
                 <!--Title-->
                 <div class="mainBarContent">
                     <div class="mainTitle roboto center-align">
-                        <i class="material-icons sub icon">mail_outline</i> Swail Mail
+                        <i class="material-icons sub icon">mail_outline</i> Mail
                     </div>
 
                     <!--Compose-->
-                    <user-details user-details="userDetails"></user-details>
+                    <div class="row">
+                        <div class="compose_button roboto l6 m6 s6 offset-l2 offset-m2 offset-s2 hide-on-med-and-down"
+                             ng-click="logout()">Logout
+                        </div>
+                    </div>
 
                     <!--labels-->
-                    <gmail-labels email-labels="emailLabels"></gmail-labels>
+                    <ul class="categorySet list">
+                        <li class="active label row no-margin">
+                            <div class="col l6 offset-l2"><label class="emailLabel">Inbox</label></div>
+                        </li>
+                        <li class="label row no-margin">
+                            <div class="col l6 offset-l2"><label class="emailLabel">Important</label></div>
+                        </li>
+                        <li class="label row no-margin">
+                            <div class="col l6 offset-l2"><label class="emailLabel">Sent</label></div>
+                        </li>
+                        <li class="label row no-margin">
+                            <div class="col l6 offset-l2"><label class="emailLabel">Drafts</label></div>
+                        </li>
+                        <li class="label row no-margin">
+                            <div class="col l6 offset-l2"><label class="emailLabel">Trash</label></div>
+                        </li>
+                    </ul>
+                    <div class="divider"></div>
 
-                    <categories categories="emailLabels"></categories>
+                    <div class="row no-margin">
+                        <div class="labelSet">
+                            <div class="labelSetTitle col l6 offset-l2">Labels</div>
+                            <div class="addLabel col l1 no-gutter">+</div>
+                        </div>
+                    </div>
+                    <div class="row no-margin">
+                        <ul class="labelList">
+                            <li class="label row no-margin">
+                                <label class="categoryLabel col l6 offset-l2 truncate">Family</label>
+                                <div class="labelColor pink col l1 no-gutter"></div>
+                            </li>
+                            <li class="label row no-margin">
+                                <label class="categoryLabel col l6 offset-l2 truncate">Friends</label>
+                                <div class="labelColor lime col l1 no-gutter"></div>
+                            </li>
+                            <li class="label row no-margin">
+                                <label class="categoryLabel col l6 offset-l2 truncate">Business</label>
+                                <div class="labelColor blue col l1 no-gutter"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divider"></div>
                 </div>
 
             </div>
@@ -90,28 +146,21 @@
 
 
                             <div class="titlebar">
-                                <div class="row no-margin">
-                                    <button class="btn-flat col offset-s1 waves-effect"><i
-                                            class="material-icons">create</i>
-                                    </button>
-                                    <button class="btn-flat col waves-effect"><i class="material-icons">alarm</i>
-                                    </button>
-                                    <div class="col s8">
-                                        <input type="text" class="validate searchField" placeholder="Search"
-                                               ng-model="search">
-                                    </div>
-                                    <button class="btn-flat col waves-effect"><i class="material-icons">settings</i>
-                                    </button>
-
+                                <a href="#" data-activates="slide-out"
+                                   class="button-collapse hide-on-large-only inline-block"><i
+                                        class="material-icons deep-purple-text">menu</i></a>
+                                <a class='dropdown-button link inline-block' href="#" data-constrainwidth="false"
+                                   data-activates='dropdown1'>Inbox <i
+                                        class="material-icons sub">arrow_drop_down</i></a>
+                                <div class="input-field no-margin inline-block searchField">
+                                    <input type="text" placeholder="Search"
+                                           class="right input-field-search">
                                 </div>
-
-                                <div class="row no-margin">
-                                    <div class="input-field col s10 offset-s1" ng-show="clicked">
-                                        <input id="searchField" type="text" class="validate">
-                                        <label for="searchField">Search</label>
-                                    </div>
-                                </div>
-
+                                <ul id='dropdown1' class='dropdown-content'>
+                                    <li><a href="#!" class="deep-purple-text truncate">Folder - 1</a></li>
+                                    <li><a href="#!" class="deep-purple-text truncate">Folder - 2</a></li>
+                                    <li><a href="#!" class="deep-purple-text truncate">Folder - 3</a></li>
+                                </ul>
                             </div>
 
                         </div>
@@ -123,8 +172,8 @@
                 <!--Mails Begin-->
                 <div class="mailWrapper">
                     <div class="mail">
-                        <div class="row no-margin mailItem">
-                            <div class="actionIcons col s4 m3 l3">
+                        <div class="row no-margin">
+                            <div class="actionIcons col s3 m3 l3">
                                 <div class="selectBox inline-block">
                                     <input type="checkbox" id="email-1" class="filled-in mailCheck">
                                     <label for="email-1"></label>
@@ -136,18 +185,16 @@
                                     <i class="material-icons">delete</i>
                                 </div>
                             </div>
-                            <div class="senderDetails col s3 m2 l2 truncate no-gutter">
-                                <div class="sender">
-                                    Anurag
-                                </div>
+                            <div class="senderDetails col s3 m2 l3 truncate no-gutter">
+                                <div class="sender">Anurag Deshpande, Me</div>
                             </div>
-                            <div class="subjectAndBody col s3 m5 l6 truncate">
+                            <div class="subjectAndBody col s3 m5 l4 truncate">
                                 <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
                                 </div>
                                 <div class="mailBody inline-block">Design of the ...</div>
                             </div>
-                            <div class="dateRecieved col s2 m1 l1">
-                                <div class="date center-align">Mar 28</div>
+                            <div class="dateRecieved inline-block col s3 m2 l2">
+                                <div class="date">Mar 28</div>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -309,3 +356,7 @@
     // Initialize collapse button
     $(".button-collapse").sideNav();
 </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</body>
+</html>

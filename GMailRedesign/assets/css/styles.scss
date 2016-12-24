@@ -56,3 +56,32 @@ html,body
   width: 75%;
   margin: auto;
 }
+
+.searchButton
+{
+  margin: 5px 0;
+}
+
+.userName
+{
+  text-align: left;
+  margin: 7px 0;
+}
+.displayName
+{
+  text-transform: uppercase;
+}
+.logout
+{
+  font-size: 12px;
+  cursor: pointer;
+}
+.logout:hover
+{
+  text-decoration: underline;
+}
+
+.searchField
+{
+  text-align: left;
+}

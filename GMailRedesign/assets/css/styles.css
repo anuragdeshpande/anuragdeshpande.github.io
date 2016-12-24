@@ -83,6 +83,9 @@ body {
 .fullwidth {
   width: 100%; }
 
+.userdetails {
+  padding: 20px 0; }
+
 .mainBarContent {
   position: relative;
   margin-top: 31px; }
@@ -97,27 +100,12 @@ body {
 .mainTitle > i {
   color: #A180D1; }
 
-.compose_button {
-  position: relative;
-  margin: 35px auto 0 auto;
-  color: #A180D1;
-  border: 2px solid #A180D1;
-  padding: 10px;
-  width: 65%;
-  border-radius: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 12px;
-  cursor: pointer; }
-
-.compose_button:hover {
-  background-color: #A180D1;
-  color: #1E2126; }
-
 .list {
   list-style: none;
   margin-top: 33px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  height: 30vh;
+  overflow-y: auto; }
 
 li.label {
   padding: 8px 0;
@@ -250,14 +238,10 @@ li.label:hover {
 .seperator {
   font-weight: normal; }
 
-.trash, .star, .senderDetails, .dateRecieved, .subjectAndBody {
-  vertical-align: top; }
-
 .mailSubject {
   font-weight: bold; }
 
 .mail {
-  padding-top: 10px;
   font-size: 13.8px; }
 
 .mail {
@@ -272,6 +256,32 @@ li.label:hover {
 
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
   margin-bottom: 0 !important; }
+
+.subjectAndBody, .dateRecieved {
+  padding: 6px 0 !important; }
+
+[type="checkbox"] + label {
+  height: 19px !important; }
+
+.star, .selectBox, .trash {
+  vertical-align: middle; }
+
+.actionIcons {
+  padding-top: 5px !important; }
+
+.senderDetails {
+  padding-top: 5px !important; }
+
+.mailItem {
+  padding: 5px 0; }
+
+.searchField {
+  height: 2rem !important; }
+
+/* label underline focus color */
+input[type=text]:focus {
+  border-bottom: 1px solid #A180D1 !important;
+  box-shadow: 0 1px 0 0 #A180D1 !important; }
 
 .emailBody {
   background-color: #EFEFEF;
@@ -370,5 +380,25 @@ html, body {
 .row > .divider {
   width: 75%;
   margin: auto; }
+
+.searchButton {
+  margin: 5px 0; }
+
+.userName {
+  text-align: left;
+  margin: 7px 0; }
+
+.displayName {
+  text-transform: uppercase; }
+
+.logout {
+  font-size: 12px;
+  cursor: pointer; }
+
+.logout:hover {
+  text-decoration: underline; }
+
+.searchField {
+  text-align: left; }
 
 /*# sourceMappingURL=styles.css.map */
