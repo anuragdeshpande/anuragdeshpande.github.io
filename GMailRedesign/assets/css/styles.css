@@ -180,6 +180,12 @@ body {
   height: 30vh;
   overflow-y: auto; }
 
+.createLabelButton {
+  cursor: pointer; }
+
+.createLabelButton:hover {
+  color: white; }
+
 .sectionTitle {
   margin-top: 17px;
   margin-bottom: 34px; }
@@ -288,6 +294,9 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
 input[type=text]:focus {
   border-bottom: 1px solid #A180D1 !important;
   box-shadow: 0 1px 0 0 #A180D1 !important; }
+
+.unreadMailCount {
+  font-weight: bold; }
 
 .emailBody {
   background-color: #EFEFEF;

@@ -1,26 +1,25 @@
-angular.module('swailMail').controller('MailController', ['$scope','cookie','$location','$window', '$stateParams', function ($scope, $cookie, $location, $window, $stateParams) {
+angular.module('swailMail').controller('MailController', ['$scope','cookie','$location','$window', 'emailManager','googleApi' , function ($scope, $cookie, $location, $window, $emailManager, $googleApi) {
 
     $scope.logout = function () {
-        $cookie.delete('userDetails');
+        $cookie.deleteUserObject();
+        $cookie.delete('authKey');
         $window.location.href = 'https://www.google.com/accounts/Logout?continue=http://www.google.com';
-    };
-
-    if(!$cookie.getUserDetails().isLoggedIn)
-    {
-      $location.path('login');
-    }
-    else
-    {
-        $scope.userDetails = $cookie.getUserDetails();
-        $scope.emailLabels = $cookie.getLabels();
-    }
-
-    $scope.isActive = function (path) {
-        return $location.path() === path;
     };
 
     $scope.isActive = function(path)
     {
-        return $location.path()==path.toLowerCase();
+        return $location.path().toLowerCase()==path.toLowerCase();
     };
-}] );
+
+
+    if($emailManager.isTokenValid())
+    {
+        console.log($cookie.getUserObject());
+
+    }
+    else
+    {
+        $location.path('login');
+    }
+
+}]);

@@ -1,4 +1,5 @@
-var verifyAuthentication = false;
+var startProcess = function () {
+};
 (function () {
     var app = angular.module('swailMail', ['ui.router', 'ngCookies']);
 
@@ -7,15 +8,13 @@ var verifyAuthentication = false;
             .state('/login', {
                 url: '/login',
                 templateUrl: 'views/login.html',
-                controller: 'LoginController'
+                controller: 'newLoginController'
             })
             .state('/mail', {
                 url: '/mail/:label',
                 templateUrl: 'views/mail.html',
                 controller: 'MailController'
             });
-
-
         $urlRouterProvider.otherwise('/login');
     }]);
 })();
