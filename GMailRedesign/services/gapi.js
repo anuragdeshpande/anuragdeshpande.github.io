@@ -1,36 +1,32 @@
-angular.module('swailMail').factory('googleApi', ['cookie', '$q', '$rootScope', '$http', function ($cookie, $q, $rootScope, $http) {
+angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$rootScope', 'helper', function (storage, $q, $rootScope, helper) {
     var CLIENT_ID = '793225560426-to0jcpob9p2jklejgmp2iv0maumqe5to.apps.googleusercontent.com';
     var SCOPES = ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/userinfo.email'];
 
-
     //Main Methods
+
     function requestAuth(type) {
-        $cookie.createUserObject();
         var deferred = $q.defer();
         gapi.auth.authorize({
             'client_id': CLIENT_ID,
             'scope': SCOPES,
             'immediate': type
         }, function (authObject) {
-            var result = {
-                status: false,
-                access_token: '',
-                message: ''
-            };
             if (authObject && !authObject.error) {
-                $cookie.saveData('authKey', authObject.access_token);
-                $cookie.saveData('authObject', authObject);
-
-                result.status = true;
-                result.access_token = authObject.access_token;
-                result.message = 'Authenticated!'
+                //Authentication Successful
+                if (storage.saveData('access_token', authObject.access_token)) {
+                    //Storing data successful
+                    setState(true, 'Authenticated!');
+                } else {
+                    //Storing auth object failed
+                    console.log(JSON.parse(JSON.stringify('Storing Data Failed')));
+                }
+            } else {
+                //Authentication Error
+                setState(false, 'Login');
             }
-            else {
-                result.status = false;
-                result.access_token = '';
-                result.message = 'Login'
-            }
 
+
+            //Starting digest cycle
             $rootScope.$apply(function () {
                 deferred.resolve(result);
             });
@@ -39,21 +35,21 @@ angular.module('swailMail').factory('googleApi', ['cookie', '$q', '$rootScope', 
     }
 
 
-    function getProfileDetails(access_token) {
+    function getProfileDetails() {
         var deferred = $q.defer();
-        $http.get('https://www.googleapis.com/plus/v1/people/me/?access_token=' + access_token).then(
+        helper.httpGet('/plus/v1/people/me/').then(
             function onSuccess(result) {
                 deferred.resolve({
-                    status: true,
-                    message: 'Profile Details Fetched'
+                    status: result.response.status === 200,
+                    profile: {
+                        name: result.response.data.displayName,
+                        image: result.response.data.image.url,
+                        id: result.response.data.id
+                    }
                 });
-
-                $cookie.saveData('profileDetails', result.data);
-
             }, function onError(errorResponse) {
                 deferred.resolve({
-                    status: false,
-                    message: 'Error! Login Again'
+                    status: false
                 });
                 // todo handle onError for getProfileDetails
                 console.log(errorResponse);
@@ -61,16 +57,34 @@ angular.module('swailMail').factory('googleApi', ['cookie', '$q', '$rootScope', 
         return deferred.promise;
     }
 
-    function getLabelDetails(access_token) {
+    function getLabels() {
+        var deferred = $q.defer();
+        helper.httpGet('/gmail/v1/users/me/labels').then(function (response) {
+
+            deferred.resolve({
+                status: response.response.status === 200,
+                labels: response.response.data.labels
+            });
+        });
+        return deferred.promise;
+    }
+
+    function getLabelUnread(label)
+    {
         
     }
 
-
+    function setState(state, message) {
+        return result = {
+            status: state,
+            message: message
+        };
+    }
 
     return {
         requestAuth: requestAuth,
-        setProfileDetails: getProfileDetails,
-        fetchLabels: getLabelDetails
+        getProfileDetails: getProfileDetails,
+        getLabels: getLabels
     }
 
 }

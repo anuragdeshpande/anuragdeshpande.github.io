@@ -1,25 +1,52 @@
-angular.module('swailMail').controller('MailController', ['$scope','cookie','$location','$window', 'emailManager','googleApi' , function ($scope, $cookie, $location, $window, $emailManager, $googleApi) {
-
+angular.module('swailMail').controller('MailController', ['$scope', '$state', 'storageService', '$window', 'googleApi', '$stateParams', '$http', 'helper', '$location', function ($scope, $state, storage, $window, googleApi, $stateParams, $http, helper, $location) {
     $scope.logout = function () {
-        $cookie.deleteUserObject();
-        $cookie.delete('authKey');
+        storage.removeAll();
         $window.location.href = 'https://www.google.com/accounts/Logout?continue=http://www.google.com';
     };
 
-    $scope.isActive = function(path)
-    {
-        return $location.path().toLowerCase()==path.toLowerCase();
+    $scope.isActive = function (path) {
+        return $location.path().toLowerCase() === path.toLowerCase();
     };
 
+    $scope.$on('$stateChangeSuccess', function () {
+        helper.verify().then(function (response) {
+            if (response && response.status) {
+                emailProcessing();
+            } else {
+                $state.go('/login');
+            }
+        });
+    });
 
-    if($emailManager.isTokenValid())
-    {
-        console.log($cookie.getUserObject());
+    function emailProcessing() {
+        var apiToLoad = 3;
+        var apiLoaded = 0;
+
+        googleApi.getProfileDetails().then(function (response) {
+            if(response.status) {
+                apiLoaded += 1;
+                $scope.userDetails = response.profile;
+            }
+            else
+            {
+                console.log(JSON.parse(JSON.stringify('Profile Fetching Failed')));
+            }
+        });
+
+        googleApi.getLabels().then(function (response) {
+            if(response.status)
+            {
+                apiLoaded+=1;
+                $scope.emailLabels = response.labels;
+
+            }
+            else
+            {
+                console.log(JSON.parse(JSON.stringify('Label Fetching Failed')));
+            }
+        });
+
+
 
     }
-    else
-    {
-        $location.path('login');
-    }
-
 }]);

@@ -1,4 +1,4 @@
-angular.module('swailMail').controller('newLoginController', ['$scope', 'googleApi', 'cookie','$location', function ($scope, $googleApi, $cookie, $location) {
+angular.module('swailMail').controller('newLoginController', ['$scope', 'googleApi', 'storageService','$state', function ($scope, googleApi, storage, $state) {
     startProcess = autoLogin;
 
     $scope.isProcessing = true;
@@ -11,29 +11,21 @@ angular.module('swailMail').controller('newLoginController', ['$scope', 'googleA
 
     function autoLogin() {
         setState(true, 'Checking Authentication');
-        $googleApi.requestAuth(true).then(function (result) {
+        googleApi.requestAuth(true).then(function (result) {
             setState(result.status, result.message);
-            if(result.status)
-            emailProcessing($cookie.getData('authObject').access_token);
+            if(result.status) {
+                $state.go('/mail', {label: 'inbox'});
+            }
         });
-
     }
 
     $scope.login = function () {
         setState(true, 'Checking Authentication');
-        $googleApi.requestAuth(false).then(function (result) {
+        googleApi.requestAuth(false).then(function (result) {
             setState(result.status, result.message);
-            if(result.status)
-            emailProcessing($cookie.getData('authObject').access_token);
-
+            if(result.status) {
+                $state.go('/mail', {label:'inbox'});
+            }
         });
-
     };
-
-    function emailProcessing(access_token) {
-        $googleApi.setProfileDetails(access_token).then(function (result) {
-            setState(result.status, result.message);
-            $googleApi.fetchLabels(access_token);
-        });
-    }
 }]);

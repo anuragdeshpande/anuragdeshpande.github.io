@@ -370,12 +370,12 @@ html, body {
   height: 75vh; }
 
 .background {
-  background: url("../img/background.jpg") black;
+  background: url("../img/background.png") black;
   height: 100%;
   background-size: cover; }
 
 .loginForm {
-  background: rgba(30, 33, 38, 0.9);
+  background: rgba(30, 33, 38, 0.7);
   padding: 75px !important; }
 
 .appIcon, .appTitle {

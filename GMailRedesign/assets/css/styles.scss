@@ -21,13 +21,13 @@ html,body
 }
 .background
 {
-  background: url("../img/background.jpg") black;
+  background: url("../img/background.png") black;
   height:100%;
   background-size: cover;
 }
 
 .loginForm {
-  background: rgba($sidebarBlack, 0.90);
+  background: rgba($sidebarBlack, 0.70);
   padding: 75px !important;
 }
 
@@ -81,7 +81,6 @@ html,body
   text-decoration: underline;
 }
 
-.searchField
-{
+.searchField {
   text-align: left;
 }

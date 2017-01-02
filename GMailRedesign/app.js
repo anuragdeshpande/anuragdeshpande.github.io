@@ -1,9 +1,9 @@
-var startProcess = function () {
-};
+function startProcess() {
+}
 (function () {
-    var app = angular.module('swailMail', ['ui.router', 'ngCookies']);
+    var app = angular.module('swailMail', ['ui.router', 'ngCookies','LocalStorageModule']);
 
-    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider','localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, $localStorage) {
         $stateProvider
             .state('/login', {
                 url: '/login',
@@ -13,8 +13,11 @@ var startProcess = function () {
             .state('/mail', {
                 url: '/mail/:label',
                 templateUrl: 'views/mail.html',
-                controller: 'MailController'
+                controller: 'MailController',
             });
         $urlRouterProvider.otherwise('/login');
+
+        $localStorage.setPrefix('swailMail');
+
     }]);
 })();
