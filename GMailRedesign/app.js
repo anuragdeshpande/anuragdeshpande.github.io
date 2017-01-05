@@ -11,9 +11,10 @@ function startProcess() {
                 controller: 'newLoginController'
             })
             .state('/mail', {
-                url: '/mail/:label',
+                url: '/mail?label',
                 templateUrl: 'views/mail.html',
                 controller: 'MailController',
+                params:{label: 'inbox', labelID:'INBOX'}
             });
         $urlRouterProvider.otherwise('/login');
 

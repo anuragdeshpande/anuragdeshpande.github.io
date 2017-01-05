@@ -1,11 +1,11 @@
 <!--Default Labels-->
 <div class="divider"></div>
 <div class="categorySet list">
-    <a ng-class="{active: isActive('/mail/'+label.name)}"
+    <a ng-class="{active: isActive(label.name, label.id)}"
        class="emailLabel col s12"
-       ng-repeat="label in emailLabels | orderBy:'-fullLabelInfo.messagesUnread' | filter:'!_'"
-       ng-click="getLabelDetails(label)">
-        <span class="labelName col offset-s2">{{label.name|lowercase}}<span class="unreadMailCount">({{label.fullLabelInfo.messagesUnread}})</span></span>
+       ng-repeat="label in systemLabels"
+       ng-click="getMail(label.id, label.name.toLowerCase())">
+        <span class="labelName col offset-s2">{{label.name|lowercase}}<span class="unreadMailCount">({{label.unread}})</span></span>
     </a>
 </div>
 <div class="divider"></div>
@@ -34,9 +34,9 @@
 
 
 <div class="categorySet labelList">
-    <a ng-repeat="category in emailLabels | filter: '!CATEGORY_' |filter: '_'"
-       ng-class="{active: isActive('/mail/'+category.name)}"
-       class="emailLabel col s12" ng-click="getLabelDetails(category)">
+    <a ng-repeat="category in userDefinedLabels | filter: '!CATEGORY_' |filter: '_'"
+       ng-class="{active: isActive(category.name, category.id)}"
+       class="emailLabel col s12" ng-click="getMail(category.id, category.name.toLowerCase())">
         <span class="col s7 offset-s2 truncate">{{category.name}}</span>
         <div class="labelColor pink col s1 offset-s1 no-gutter"></div>
     </a>

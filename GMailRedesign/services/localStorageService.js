@@ -1,5 +1,6 @@
-angular.module('swailMail').factory('storageService', ['localStorageService', function (storage) {
+angular.module('swailMail').factory('storageService', ['localStorageService', '$q', function (storage, $q) {
     function saveData(name, value) {
+        console.log(JSON.parse(JSON.stringify('Saving: ' + name)));
         return storage.set(name, value);
     }
 
@@ -8,18 +9,18 @@ angular.module('swailMail').factory('storageService', ['localStorageService', fu
     }
 
     function remove(name) {
-        console.log(JSON.parse(JSON.stringify('Removed: '+ name)));
+        console.log(JSON.parse(JSON.stringify('Removed: ' + name)));
         return storage.remove(name);
     }
-    function removeAll()
-    {
+
+    function removeAll() {
         console.log(JSON.parse(JSON.stringify('Removing All')));
         return storage.clearAll();
     }
 
-    return{
-        saveData: saveData,
-        getData: getData,
+    return {
+        set: saveData,
+        get: getData,
         remove: remove,
         removeAll: removeAll
     }

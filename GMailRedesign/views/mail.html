@@ -1,22 +1,8 @@
-<div class="mainContainer" ng-cloak>
+<div class="mainContainer">
     <div class="row no-margin">
         <div class="emailApp">
-            <!--Sidebar Begins-->
-            <div class="col no-gutter hide-on-med-and-down l2 fullHeight sidebar">
-                <!--Title-->
-                <div class="mainBarContent">
-                    <div class="mainTitle roboto center-align">
-                        <i class="material-icons sub icon">mail_outline</i> Swail Mail
-                    </div>
-
-                    <!--Compose-->
-                    <user-details user-details="userDetails"></user-details>
-                    <!--labels-->
-                    <gmail-labels email-labels="emailLabels"></gmail-labels>
-                </div>
-
-            </div>
-            <!--Sidebar Ends-->
+            <sidebar user-defined-labels="userDefinedLabels" system-labels="systemLabels"
+                     user-details="userDetails"></sidebar>
 
 
             <!--Email List Begins-->
@@ -24,67 +10,6 @@
                 <div class="emailListContent">
                     <div class="mailList">
                         <div class="sectionTitle center-align">
-
-
-                            <!--slideout navigation begins-->
-                            <div id="slide-out" class="side-nav hide-on-large-only sidebar">
-                                <div class="mainBarContent">
-                                    <div class="mainTitle roboto center-align"><i class="material-icons sub icon">mail_outline</i>
-                                        Mail
-                                    </div>
-
-                                    <!--Compose-->
-                                    <div class="row">
-                                        <div class="compose_button roboto ">Compose</div>
-                                    </div>
-
-                                    <!--labels-->
-                                    <ul class="categorySet list">
-                                        <li class="active label row no-margin">
-                                            <div class="col offset-s2"><label class="emailLabel">Inbox</label></div>
-                                        </li>
-                                        <li class="label row no-margin">
-                                            <div class="col offset-s2"><label class="emailLabel">Important</label></div>
-                                        </li>
-                                        <li class="label row no-margin">
-                                            <div class="col offset-s2"><label class="emailLabel">Sent</label></div>
-                                        </li>
-                                        <li class="label row no-margin">
-                                            <div class="col offset-s2"><label class="emailLabel">Drafts</label></div>
-                                        </li>
-                                        <li class="label row no-margin">
-                                            <div class="col offset-s2"><label class="emailLabel">Trash</label></div>
-                                        </li>
-                                    </ul>
-                                    <div class="divider"></div>
-
-                                    <div class="row no-margin">
-                                        <div class="labelSet">
-                                            <div class="labelSetTitle col s3 offset-s2">Labels</div>
-                                            <div class="addLabel col offset-s3 no-gutter">+</div>
-                                        </div>
-                                    </div>
-                                    <div class="row no-margin">
-                                        <ul class="labelList">
-                                            <li class="label row no-margin">
-                                                <label class="categoryLabel col s3 offset-s2 truncate">Family</label>
-                                                <div class="labelColor pink col offset-s3 no-gutter"></div>
-                                            </li>
-                                            <li class="label row no-margin">
-                                                <label class="categoryLabel col s3 offset-s2 truncate">Friends</label>
-                                                <div class="labelColor lime col offset-s3 no-gutter"></div>
-                                            </li>
-                                            <li class="label row no-margin">
-                                                <label class="categoryLabel col s3 offset-s2 truncate">Business</label>
-                                                <div class="labelColor blue col offset-s3 no-gutter"></div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="divider"></div>
-                                </div>
-                            </div>
-                            <!--slideout navigation ends-->
-
 
                             <div class="titlebar">
                                 <div class="row no-margin">
@@ -118,186 +43,13 @@
 
 
                 <!--Mails Begin-->
-                <div class="mailWrapper">
-                    <div class="mail">
-                        <div class="row no-margin mailItem">
-                            <div class="actionIcons col s4 m3 l3">
-                                <div class="selectBox inline-block">
-                                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
-                                    <label for="email-1"></label>
-                                </div>
-                                <div class="star inline-block">
-                                    <i class="material-icons">star_border</i>
-                                </div>
-                                <div class="trash inline-block">
-                                    <i class="material-icons">delete</i>
-                                </div>
-                            </div>
-                            <div class="senderDetails col s3 m2 l2 truncate no-gutter">
-                                <div class="sender">
-                                    Anurag
-                                </div>
-                            </div>
-                            <div class="subjectAndBody col s3 m5 l6 truncate">
-                                <div class="mailSubject inline-block">UI/UX Change <span class="seperator"> - </span>
-                                </div>
-                                <div class="mailBody inline-block">Design of the ...</div>
-                            </div>
-                            <div class="dateRecieved col s2 m1 l1">
-                                <div class="date center-align">Mar 28</div>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                    </div>
-                </div>
+                <emails emails="emails"></emails>
                 <!--mails end-->
             </div>
             <!--Email List Ends-->
 
 
-            <div class="col no-gutter hide-on-med-and-down l5 emailBody fullHeight">
-                <div class="emailBodyContent center-align">
-                    <div class="threadTitle row col l12">
-                        <div class="emailSubject">UI/UX Change
-                        </div>
-                        <div class="threadCaption">
-                            <span class="accentText">6 Threads</span>, between <span
-                                class="accentText underline">You</span>,
-                            <span class="accentText underline">Anurag Deshpande</span> started March 28 2016, 9:36 pm
-                        </div>
-                    </div>
-
-
-                    <div class="responseMailWrapper row no-margin raleway">
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                        <div class="responsemail col l12">
-                            <div class="head row no-margin">
-                                <div class="fromto col l12 m12 no-gutter">
-                                    you <i class="material-icons vtop accentText ">trending_flat</i> Anurag Deshpande
-                                </div>
-                                <div class="emailDate  col l12 m12 no-gutter">March 28 2016, 12:08 pm</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="responseBody">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aperiam architecto aut
-                                cum deserunt ducimus ea, earum impedit inventore iusto, necessitatibus nesciunt
-                                obcaecati quibusdam quos. Deleniti doloremque ex temporibus.
-                            </div>
-                            <div class="emailActions">
-                                <div class="reply actionIcon inline-block"><i class="material-icons">reply</i></div>
-                                <div class="replyAll actionIcon inline-block"><i class="material-icons">reply_all</i>
-                                </div>
-                                <div class="forward actionIcon inline-block"><i class="material-icons">forward</i></div>
-                                <div class="delete actionIcon inline-block"><i class="material-icons">delete</i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <threads-view threads="threads"></threads-view>
         </div>
     </div>
 </div>

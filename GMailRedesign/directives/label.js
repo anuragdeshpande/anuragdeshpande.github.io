@@ -4,7 +4,8 @@ angular.module('swailMail').directive('gmailLabels', function () {
        templateUrl: 'directiveTemplates/label.html',
        controller: 'MailController',
        scope: {
-           emailLabels: '='
+           userDefinedLabels: '=',
+           systemLabels: '='
        }
    }
 });

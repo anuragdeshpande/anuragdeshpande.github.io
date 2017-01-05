@@ -1,0 +1,35 @@
+<h1 ng-hide="emails">{{emails}}</h1>
+<div class="mailWrapper">
+    <div class="mail" ng-repeat="mail in emails | orderBy: '-internalDate'"
+         ng-class="{activeMail: isThreadActive(mail.threadID)}" ng-click="getThread(mail.threadID)">
+        <div class="row no-margin mailItem">
+            <div class="actionIcons col">
+                <div class="selectBox inline-block">
+                    <input type="checkbox" id="email-1" class="filled-in mailCheck">
+                    <label for="email-1"></label>
+                </div>
+                <div class="star inline-block">
+                    <i class="material-icons">star_border</i>
+                </div>
+                <div class="trash inline-block">
+                    <i class="material-icons">delete</i>
+                </div>
+            </div>
+            <div class="senderDetails col s3 m2 l2 truncate no-gutter">
+                <div class="sender">
+                    {{mail.from}}
+                </div>
+            </div>
+            <div class="subjectAndBody col s3 m5 l6 truncate">
+                <div class="mailSubject inline-block">{{mail.subject}} <span class="seperator"
+                                                                             ng-show="mail.snippet"> - </span>
+                </div>
+                <div class="mailBody inline-block">{{mail.snippet}}</div>
+            </div>
+            <div class="dateRecieved col s2 m2 l2 truncate">
+                <div class="date center-align">{{mail.internalDate| date}}</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MongoConfiguration">
+    <option name="serverConfigurations">
+      <list>
+        <ServerConfiguration>
+          <option name="authenticationDatabase" value="jobapplications" />
+          <option name="authenticationMechanism" value="SCRAM-SHA-1" />
+          <option name="connectOnIdeStartup" value="true" />
+          <option name="label" value="JobApplicationsDB" />
+          <option name="password" value="Happyhome123" />
+          <option name="serverUrls">
+            <list>
+              <option value="ds050559.mlab.com:50559" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="jobapplications" />
+          <option name="username" value="anurag" />
+        </ServerConfiguration>
+      </list>
+    </option>
+    <option name="shellPath" value="C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe" />
+  </component>
+</project>

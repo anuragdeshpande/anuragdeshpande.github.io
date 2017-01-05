@@ -257,7 +257,8 @@ body {
   font-size: 13.8px; }
 
 .mail {
-  border-left: 3px solid transparent; }
+  border-left: 3px solid transparent;
+  cursor: pointer; }
 
 .mail:hover {
   background-color: rgba(77, 84, 93, 0.1); }
