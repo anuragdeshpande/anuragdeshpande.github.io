@@ -7,6 +7,6 @@ angular.module('swailMail').directive('sidebar', function () {
            userDetails: '='
        },
        templateUrl:'directiveTemplates/sidebar.html',
-       controller: 'MailController'
+       controller: 'sideBarController'
    }
 });

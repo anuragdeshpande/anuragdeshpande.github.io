@@ -1,16 +1,28 @@
-angular.module('swailMail').factory('emailManager', ['cookie', 'googleApi', function ($cookie, $googleApi) {
+angular.module('swailMail').factory('emailManager', [function () {
 
-    return {
-        isTokenValid: function () {
-            if($cookie.getUserObject())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+    var emails = {};
+
+    function set(id, mail) {
+        emails[id] = mail;
+    }
+
+    function get(id) {
+        if (id in emails) {
+            return emails[id];
         }
+        else {
+            return false;
+        }
+    }
+    function getAll() {
+        return $.map(emails, function (value, index) {
+            return [value];
+        });
+    }
 
+    return{
+        set:set,
+        get:get,
+        getAll: getAll
     }
 }]);

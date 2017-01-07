@@ -1,7 +1,7 @@
 <h1 ng-hide="emails">{{emails}}</h1>
 <div class="mailWrapper">
-    <div class="mail" ng-repeat="mail in emails | orderBy: '-internalDate'"
-         ng-class="{activeMail: isThreadActive(mail.threadID)}" ng-click="getThread(mail.threadID)">
+    <div class="mail" ng-repeat="mail in emails | orderBy: '-internalDate' | unique: 'threadID'"
+         ng-class="{activeMail: isThreadActive(mail.threadID)}" ng-click="getThread(mail)">
         <div class="row no-margin mailItem">
             <div class="actionIcons col">
                 <div class="selectBox inline-block">

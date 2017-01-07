@@ -4,7 +4,7 @@
     <a ng-class="{active: isActive(label.name, label.id)}"
        class="emailLabel col s12"
        ng-repeat="label in systemLabels"
-       ng-click="getMail(label.id, label.name.toLowerCase())">
+       ng-click="changeLabel(label.id, label.name.toLowerCase())">
         <span class="labelName col offset-s2">{{label.name|lowercase}}<span class="unreadMailCount">({{label.unread}})</span></span>
     </a>
 </div>

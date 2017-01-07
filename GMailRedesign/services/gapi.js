@@ -1,4 +1,4 @@
-angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$rootScope', 'helper', '$timeout', '$window', function (storage, $q, $rootScope, helper, $timeout, $window) {
+angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$rootScope', 'helper', 'emailManager', function (storage, $q, $rootScope, helper, emailManager) {
     var CLIENT_ID = '793225560426-to0jcpob9p2jklejgmp2iv0maumqe5to.apps.googleusercontent.com';
     var SCOPES = ['https://mail.google.com/', 'https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/userinfo.email'];
 
@@ -23,14 +23,8 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
             } else {
                 //Authentication Error
                 result = setState(false, 'Login');
-                storage.removeAll();
-                var newWindow = window.open('https://mail.google.com/mail/?logout&hl=fr', 'Disconnect from Google', 'width=100,height=50,menubar=no,status=no,location=no,toolbar=no,scrollbars=no,top=200,left=200');
-                setTimeout(function () {
-                    if (newWindow) newWindow.close();
-                    window.location = "#/login";
-                }, 3000);
+                helper.logout();
             }
-            console.log(JSON.parse(JSON.stringify(result)));
             deferred.resolve(result);
         });
         return deferred.promise;
@@ -45,7 +39,8 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
                     profile: {
                         name: result.response.data.displayName,
                         image: result.response.data.image.url,
-                        id: result.response.data.id
+                        id: result.response.data.id,
+                        email: result.response.data.emails[0].value
                     }
                 });
             }, function onError(errorResponse) {
@@ -198,13 +193,12 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
                             id: responseObject.data.id,
                             threadID: responseObject.data.threadId
                         };
-
                         responseObject.data.payload.headers.forEach(function (header) {
                             switch (header.name) {
                                 case 'From':
                                     var from = header.value.split('<');
                                     if (from[0] === '') {
-                                        mail.from = from[1].replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+                                        mail.from = from[1].trim().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
                                     }
                                     else {
                                         mail.from = from[0];
@@ -226,12 +220,12 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
 
                             }
                         });
-                        emails.push(mail);
+                        emailManager.set(mail.id, mail);
                         --messagesLength;
                         if (messagesLength <= 0) {
                             deferred.resolve({
-                                mails: emails
-                            })
+                                mails: emailManager.getAll()
+                            });
                         }
                     });
                 }
@@ -246,13 +240,14 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
         return deferred.promise;
     }
 
-    function getThreads(threadID) {
+    function getThreads(mail) {
         var deffered = $q.defer();
-        helper.httpGet('/gmail/v1/users/me/threads/' + threadID).then(function (response) {
+        console.log(JSON.parse(JSON.stringify(mail)));
+        helper.httpGet('/gmail/v1/users/me/threads/' + mail.threadID).then(function (response) {
             if (response.response.status === 200) {
                 deffered.resolve({
                     status: true,
-                    thread: response.response.data
+                    thread: processThreads(mail, response.response.data)
                 });
             } else {
                 deffered.resolve({
@@ -261,6 +256,31 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
             }
         });
         return deffered.promise;
+    }
+
+    function processThreads(mail, thread) {
+        var participants = [];
+        thread.messages.forEach(function (message) {
+            message.payload.headers.forEach(function (header) {
+                if (header.name === 'From') {
+                    var name = header.value.split('<');
+                    participants.push(name[0] ? name[0].trim().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '') : name[1]);
+                }
+                if (header.name === 'Subject') {
+                    message.subject = header.value;
+                    console.log(JSON.parse(JSON.stringify(message)));
+                }
+            });
+        });
+        if (participants.length > 1 && thread.messages.length > 1) {
+            thread.participants = 'Between ' + participants[0] + ' and ' + (participants.length - 1) + ' Other(s)';
+        }
+        else {
+            thread.participants = 'By You';
+        }
+        thread.startDate=mail.internalDate;
+        thread.subject = mail.subject;
+        return thread;
     }
 
     function setState(state, message) {
@@ -277,6 +297,5 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
         getEmails: getEmails,
         getThreads: getThreads
     }
-
 }
 ]);

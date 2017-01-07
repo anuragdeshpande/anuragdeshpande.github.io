@@ -1,7 +1,7 @@
 function startProcess() {
 }
 (function () {
-    var app = angular.module('swailMail', ['ui.router', 'ngCookies','LocalStorageModule']);
+    var app = angular.module('swailMail', ['ui.router','LocalStorageModule', 'angular.filter']);
 
     app.config(['$stateProvider', '$urlRouterProvider','localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, $localStorage) {
         $stateProvider
@@ -11,10 +11,9 @@ function startProcess() {
                 controller: 'newLoginController'
             })
             .state('/mail', {
-                url: '/mail?label',
+                url: '/mail',
                 templateUrl: 'views/mail.html',
-                controller: 'MailController',
-                params:{label: 'inbox', labelID:'INBOX'}
+                controller: 'MailController'
             });
         $urlRouterProvider.otherwise('/login');
 

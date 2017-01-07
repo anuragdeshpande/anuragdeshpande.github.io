@@ -31,8 +31,18 @@ angular.module('swailMail').factory('helper', ['$http', 'storageService', 'const
         return deferred.promise;
     }
 
+    function logout() {
+        storage.removeAll();
+        var newWindow = window.open('https://mail.google.com/mail/?logout&hl=fr', 'Disconnect from Google', 'width=100,height=50,menubar=no,status=no,location=no,toolbar=no,scrollbars=no,top=200,left=200');
+        setTimeout(function () {
+            if (newWindow) newWindow.close();
+            window.location = "#/login";
+        }, 3000);
+    }
+
     return{
         verify: checkValidity,
-        httpGet: httpGet
+        httpGet: httpGet,
+        logout: logout
     }
 }]);
