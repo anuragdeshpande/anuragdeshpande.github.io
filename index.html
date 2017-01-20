@@ -1,1 +1,165 @@
-Hi This is Anurag, This portfolio is under development. See you soon with lots of great content.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trinal Styles</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/coreStyles.css">
+    <link rel="stylesheet" href="css/pageStyles.css">
+</head>
+<body>
+<h2>Secondary menu styles</h2>
+<div class="secondary-menu">
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="#">Clients</a></li>
+        <li role="presentation"><a href="#">Projects</a></li>
+        <li role="presentation" class="active"><a href="#">Contracts</a></li>
+        <li role="presentation"><a href="#">Contractors</a></li>
+        <li role="presentation"><a href="#">Employees</a></li>
+    </ul>
+</div>
+<div class="separator"></div>
+<h2>section styles</h2>
+<div class="tabs">
+    <section>
+        <div class="tab tabTitle section-tab">projects</div>
+        <div class="section-body">
+            <div class="input-field inline-block">
+                <label for="projectNumber">Project Number</label>
+                <input type="text" id="projectNumber" class="inputField">
+            </div>
+            <div class="input-field inline-block">
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" class="inputField">
+            </div>
+            <div class="input-field inline-block">
+                <label for="clientName">Client Name</label>
+                <input type="text" id="clientName" class="inputField">
+            </div>
+            <button class="button button-primary">search</button>
+            <button class="button button-red">clear</button>
+            <button class="button button-primary">create new</button>
+        </div>
+    </section>
+</div>
+<div class="separator"></div>
+<h2>Tabbed Divisions</h2>
+<div class="tabbedSection">
+    <div class="tabs">
+        <div class="tab tabTitle">projects</div>
+        <div class="tab tabTitle">contractors</div>
+        <div class="tab tabTitle">commitments</div>
+        <div class="tab tabTitle active-tab">employees</div>
+        <div class="tab tabTitle">site visits</div>
+        <div class="tab tabTitle">payrolls</div>
+        <div class="tab tabTitle">change orders</div>
+        <div class="tab tabTitle">payments</div>
+        <div class="tab tabTitle">attachments</div>
+        <div class="tab tabTitle">notes</div>
+        <div class="tab tabTitle">summary</div>
+    </div>
+    <div class="tabs-body">
+        <button class="button">Edit</button>
+        <button class="button">Delete</button>
+    </div>
+</div>
+<div class="separator"></div>
+<h2>Forms with labels and Inputs</h2>
+<div class="forms">
+    <div class="form">
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="address1" class="required">Address Line 1</label>
+            </div>
+            <div class="formLabel">
+                <input type="text" id="address1" class="inputField" required>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="address2">Address Line 2</label>
+            </div>
+            <div class="formLabel"><input type="text" class="inputField" id="address2"></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="city" class="required">city</label>
+            </div>
+            <div class="formLabel"><input type="text" class="inputField required" id="city"></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="state" class="required">state</label>
+            </div>
+            <div class="formLabel"><input type="text" class="inputField required" id="state"></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="zip" class="required">zip code</label>
+            </div>
+            <div class="formLabel"><input type="text" class="inputField required" id="zip"></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="locale">locale</label>
+            </div>
+            <div class="formLabel">
+                <select name="locale" id="locale" class="inputField">
+                    <option value="option">Option</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="separator"></div>
+<h2>Forms with labels and No Inputs</h2>
+<div class="forms">
+    <div class="form">
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="address1" class="required">Address Line 1</label>
+            </div>
+            <div class="formLabel">
+                <span class="formText">Text</span>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="address2">Address Line 2</label>
+            </div>
+            <div class="formLabel"><span class="formText">Text</span></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="city" class="required">city</label>
+            </div>
+            <div class="formLabel"><span class="formText">Text</span></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="state" class="required">state</label>
+            </div>
+            <div class="formLabel"><span class="formText">Text</span></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="zip" class="required">zip code</label>
+            </div>
+            <div class="formLabel"><span class="formText">Text</span></div>
+        </div>
+        <div class="formRow">
+            <div class="formLabel">
+                <label for="locale">locale</label>
+            </div>
+            <div class="formLabel">
+                <span class="formText">Text</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
