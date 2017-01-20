@@ -47,12 +47,15 @@ angular.module('swailMail').controller('MailController', ['$scope', '$location',
         });
     };
 
-    //Controller Functions
-    function getEmailsInLabel() {
+    $scope.getEmailsInLabel = function() {
         var params = $location.search();
         getEmails(params.labelID);
-    }
+    };
 
+
+
+
+    //Controller Functions
     function emailProcessing(label) {
         console.log(JSON.parse(JSON.stringify(label)));
         console.log(JSON.parse(JSON.stringify('Recieved Email Label: ' + label.labelID)));
@@ -60,7 +63,7 @@ angular.module('swailMail').controller('MailController', ['$scope', '$location',
 
         getProfileDetails();
         getLabels();
-        getEmails(atob(label.labelID));
+        // getEmails(atob(label.labelID));
     }
 
 
@@ -88,21 +91,24 @@ angular.module('swailMail').controller('MailController', ['$scope', '$location',
         });
     }
 
-    function getEmails(labelID) {
-        googleApi.getEmails(labelID).then(function (response) {
-            $scope.emails = response.mails;
-            getThread(response.mails[0]);
-        });
-    }
-
     function changeThreadState(threadID) {
         var searchTerms = $location.search();
         searchTerms.threadID = threadID;
         $location.search(searchTerms);
     }
 
-    $scope.testMail=function() {
-        console.log(JSON.parse(JSON.stringify('testing')));
-    }
+    function getThread(mail) {
+        changeThreadState(mail.threadID);
+        googleApi.getThreads(mail).then(function (response) {
+            if (response.status) {
+                console.log(JSON.parse(JSON.stringify('Recieved Thread')));
+                console.log(JSON.parse(JSON.stringify(response.thread)));
+                $scope.threads = response.thread;
+            }
+            else {
+                console.log(JSON.parse(JSON.stringify('Thread Fetch Failed')));
+            }
+        });
+    };
 
 }]);

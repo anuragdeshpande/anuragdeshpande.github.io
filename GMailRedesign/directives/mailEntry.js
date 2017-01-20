@@ -5,6 +5,6 @@ angular.module('swailMail').directive('emails', function () {
             emails: '='
         },
         templateUrl:'directiveTemplates/emailListEntry.html',
-        controller: 'MailController'
+        controller: 'threadController'
     }
 });

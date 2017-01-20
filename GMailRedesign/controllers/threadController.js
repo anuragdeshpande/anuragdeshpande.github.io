@@ -1,10 +1,12 @@
 angular.module('swailMail').controller('threadController', ['$rootScope', '$scope', 'helper', '$location', 'googleApi', function ($rootScope, $scope, helper, $location, googleApi) {
     $scope.$on('$locationChangeSuccess', function (event, newUrl, oldUrl) {
-        if ($location.search().threadID) {
-            var threadID = $location.search().threadID;
-            getThreads(threadID);
-
-        }
+        // if ($location.search().threadID) {
+        //     var threadID = $location.search().threadID;
+        //     getThreads(threadID);
+        //
+        // }
+        var searchParams = $location.search();
+        getEmails(atob(searchParams.labelID));
     });
 
     function getThreads(threadID) {
@@ -17,6 +19,15 @@ angular.module('swailMail').controller('threadController', ['$rootScope', '$scop
             else {
                 console.log(JSON.parse(JSON.stringify('Thread Fetch Failed')));
             }
+        });
+    }
+
+    function getEmails(labelID) {
+        googleApi.getEmails(labelID).then(function (response) {
+            $scope.emails = response.mails;
+            console.log(JSON.parse(JSON.stringify('Response Emails from gapi')));
+            console.log(JSON.parse(JSON.stringify(response.mails)));
+            getThread(response.mails[0]);
         });
     }
 }]);

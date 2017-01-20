@@ -223,6 +223,8 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
                         emailManager.set(mail.id, mail);
                         --messagesLength;
                         if (messagesLength <= 0) {
+                            console.log(JSON.parse(JSON.stringify('returning all the emails from the stack')));
+                            console.log(JSON.parse(JSON.stringify(emailManager.getAll())));
                             deferred.resolve({
                                 mails: emailManager.getAll()
                             });
@@ -242,7 +244,6 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
 
     function getThreads(mail) {
         var deffered = $q.defer();
-        console.log(JSON.parse(JSON.stringify(mail)));
         helper.httpGet('/gmail/v1/users/me/threads/' + mail.threadID).then(function (response) {
             if (response.response.status === 200) {
                 deffered.resolve({
@@ -268,7 +269,6 @@ angular.module('swailMail').factory('googleApi', ['storageService', '$q', '$root
                 }
                 if (header.name === 'Subject') {
                     message.subject = header.value;
-                    console.log(JSON.parse(JSON.stringify(message)));
                 }
             });
         });

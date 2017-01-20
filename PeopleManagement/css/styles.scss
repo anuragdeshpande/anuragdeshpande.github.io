@@ -1,0 +1,127 @@
+/* Colors */
+$bodyBackground: #e9e9e9;
+$borderColor: #d0d0d0;
+$cardbackground: #FFF;
+$accent-color: #cddc39;
+$subtitleColor: #a0a0a0;
+
+body{
+  background-color: $bodyBackground;
+}
+
+.inline-block{
+  display: inline-block;
+}
+.navbar{
+  padding: 3px 0 0 0;
+  width: 100%;
+}
+
+.appTitle, .appIcon{
+  display: inline-block;
+  font-size: 28px;
+  color: #FFF;
+  vertical-align: middle;
+}
+.search-field
+{
+  //background-color: white;
+  //border: 1px solid $borderColor;
+  //padding: 0 25px;
+}
+
+.search_icon{
+  top: 11px;
+  left: 7px;
+}
+
+/* label color */
+.input-field label {
+  color: #000;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+
+.userIcon, .userDetails, .designation, .workEmail, .workPhone{
+  display: inline-block;
+}
+
+.userIcon{
+  border: 3px solid black;
+  border-radius: 50%;
+  vertical-align: middle;
+  padding: 16px 18px;
+  color: black;
+}
+
+.personName{
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.contactDetails, .workAddress{
+  font-size: 14px;
+  color: $subtitleColor;
+}
+.subTitle{
+  color: $subtitleColor;
+}
+.userDetails{
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.card{
+  background-color: white;
+  border: 1px solid $borderColor;
+  padding: 15px;
+}
+
+.personalInformation{
+  border-right: 1px solid #d0d0d0 ;
+}
+.customCard{
+  padding: 10px 0;
+}
+
+.nameCard{
+  padding-bottom: 15px;
+}
+.entryIcon, .value{
+  vertical-align: middle;
+}
+.entry{
+  padding: 10px 0;
+}
+.entryIcon{
+  width: 20px;
+}
+.value{
+  padding-left: 5px;
+}
+.rowHalfMargin{
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+i.fa-icon{
+  font-size: 24px;
+  text-align: center;
+}
+.smallText{
+  font-size: 12px;
+}
+
