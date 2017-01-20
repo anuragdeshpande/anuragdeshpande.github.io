@@ -1,0 +1,176 @@
+body{
+    background-color: #FFFFEE;
+}
+.nav{
+    font-family: serif;
+}
+.nav-tabs{
+    border-bottom: 3px solid #6B8C24;
+    background-color: #D6D7A7;
+}
+
+.nav>li{
+    margin-bottom: -3px;
+}
+
+.nav>li>a + .nav>li>a{
+    color: white;
+}
+
+.nav-tabs>li>a::after{
+    left: 25px;
+}
+.nav-tabs>li>a::before{
+    right: 25px;
+}
+
+.nav-tabs>li>a{
+    border-radius: 0;
+    border: 0;
+    color: #0c5a11;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus{
+    background-color: transparent;
+    border: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background-color: transparent;
+    color: #0c5a11;
+    border: 0;
+}
+.nav-tabs>li.active, .nav-tabs>li.active:focus, .nav-tabs>li.active:hover{
+    background-color: #FFFFEE;
+}
+.nav>.separator{
+    padding: 5px 0;
+    margin: 0 4px -3px 4px;
+}
+.section-body> .input-field> label{
+    vertical-align: text-bottom;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0 40px 0 20px;
+}
+.section-body> .input-field> .inputField{
+    border: 2px solid #d0d0d0;
+    border-radius: 4px;
+    width: 90px;
+    margin-right: 20px;
+}
+.section-body{
+    clear: both;
+    background-color: #EEEEEE;
+    padding: 10px 5px;
+    border: 3px solid #C1C1C1;
+
+}
+.inline-block{
+    display: inline-block;
+}
+.button{
+    border: 1px solid #d0d0d0;
+    color: white;
+    text-transform: capitalize;
+    padding: 3px 10px;
+    font-size: small;
+}
+section .button-primary {
+    background: linear-gradient(#54A31B, #4A8F18);
+}
+
+section .button-red{
+    background-color: #D9534F;
+    border-radius: 4px;
+}
+.tab {
+    float: left;
+    padding: 3px 3px 3px 10px;
+    margin: 10px 4px 0 0;
+    background-color: #D6D7A7;
+    color: #0c5a11;
+    text-transform: capitalize;
+    font-size: smaller;
+}
+
+.active-tab, .section-tab{
+    background-color: #6F911F;
+    color: #FFFFEE;
+    font-weight: bold;
+}
+.tab::after{
+    content: url("../assets/button-fold-green.gif");
+    position: relative;
+    right: -3px;
+    top: -7px;
+}
+.active-tab::after, .section-tab::after{
+    content: url("../assets/button-fold.gif");
+}
+.tabs{
+    clear: both;
+}
+.tabs-body{
+    border: 2px solid #94942A;
+    clear: both;
+    padding: 10px;
+}
+.tabs-body button{
+    padding: 3px 5px;
+    color: black;
+    text-transform: capitalize;
+    background: linear-gradient(#DCDEBA, #FFFFFF);
+    border: 1px solid #A6A64E;
+}
+.form{
+    display: table;
+    width: 50%;
+}
+.form>.formRow{
+    display: table-row;
+}
+.form>.formRow>.formLabel{
+    display: table-cell;
+    text-transform: capitalize;
+    background-color: #F2F3E4;
+    border-bottom: 1px solid #949429;
+    border-top: 1px solid #949429;
+    width: 25%;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.form>.formRow>.formLabel:nth-child(2n+2){
+    background-color: white;
+    border-right: 2px solid #949429;
+}
+.form>.formRow>.formLabel:nth-child(2n+1){
+    border-left: 2px solid #949429;
+}
+.form>.formRow>.formLabel>label{
+    font-size: small;
+    font-weight:400;
+}
+.form>.formRow>.formLabel>.inputField{
+    padding: 0;
+    line-height: 0.5;
+    margin-top: 4px;
+    margin-left: 7px;
+    border: 2px solid #C1C1C1;
+}
+.form>.formRow>.formLabel>.required::after{
+    content: "*";
+    color: red;
+    margin-left: 3px;
+}
+.form>.formRow:first-child>.formLabel{
+    border-top: 2px solid #949429;
+}
+.form>.formRow:last-child>.formLabel{
+    border-bottom: 2px solid #949429;
+}
+.formText{
+    margin-left: 7px;
+}
