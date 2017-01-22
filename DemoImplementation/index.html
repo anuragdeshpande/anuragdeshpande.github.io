@@ -8,158 +8,288 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/coreStyles.css">
     <link rel="stylesheet" href="css/pageStyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<h2>Secondary menu styles</h2>
-<div class="secondary-menu">
-    <ul class="nav nav-tabs">
-        <li role="presentation"><a href="#">Clients</a></li>
-        <li role="presentation"><a href="#">Projects</a></li>
-        <li role="presentation" class="active"><a href="#">Contracts</a></li>
-        <li role="presentation"><a href="#">Contractors</a></li>
-        <li role="presentation"><a href="#">Employees</a></li>
-    </ul>
-</div>
-<div class="separator"></div>
-<h2>section styles</h2>
-<div class="tabs">
-    <section>
-        <div class="tab tabTitle section-tab">projects</div>
-        <div class="section-body">
-            <div class="input-field inline-block">
-                <label for="projectNumber">Project Number</label>
-                <input type="text" id="projectNumber" class="inputField">
-            </div>
-            <div class="input-field inline-block">
-                <label for="projectName">Project Name</label>
-                <input type="text" id="projectName" class="inputField">
-            </div>
-            <div class="input-field inline-block">
-                <label for="clientName">Client Name</label>
-                <input type="text" id="clientName" class="inputField">
-            </div>
-            <button class="button button-primary">search</button>
-            <button class="button button-red">clear</button>
-            <button class="button button-primary">create new</button>
+<header>
+    <div class="headerTopDiv">
+        <div class="headerMenu">
+            <ul class="mainMenu">
+                <li class="menuItem"><a href="#">Home</a></li>
+
+                <li class="menuItem"><a href="#">Admin</a></li>
+                <li class="dropdown menuItem">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> GPTS </a>
+                    <div class="dropdown-menu">
+                        <div class="shade shade-top"></div>
+                        <div class="subMenuWrapper">
+                            <div class="menuImage"><img src="assets/GptsIcon.jpg" alt="Menu Icon"></div>
+                            <div class="subMenuContainer">
+                                <div class="SubMenuTitle">Projects and Contractors</div>
+                                <ul class="subMenu">
+                                    <li><a href="">Clients</a></li>
+                                    <li><a href="">Projects</a></li>
+                                    <li><a href="">Contracts</a></li>
+                                    <li><a href="">Contractors</a></li>
+                                    <li><a href="">Employees</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="shade shade-bottom"></div>
+                    </div>
+                </li>
+                <li class="menuItem"><a href="#">Reports</a></li>
+                <li class="menuItem"><a href="#">Imports</a></li>
+                <li class="menuItem"><a href="#">Attachments</a></li>
+            </ul>
         </div>
-    </section>
-</div>
-<div class="separator"></div>
-<h2>Tabbed Divisions</h2>
-<div class="tabbedSection">
-    <div class="tabs">
-        <div class="tab tabTitle">projects</div>
-        <div class="tab tabTitle">contractors</div>
-        <div class="tab tabTitle">commitments</div>
-        <div class="tab tabTitle active-tab">employees</div>
-        <div class="tab tabTitle">site visits</div>
-        <div class="tab tabTitle">payrolls</div>
-        <div class="tab tabTitle">change orders</div>
-        <div class="tab tabTitle">payments</div>
-        <div class="tab tabTitle">attachments</div>
-        <div class="tab tabTitle">notes</div>
-        <div class="tab tabTitle">summary</div>
+        <div class="welcomeText">
+            <div class="userWelcome">Welcome admin@domain.com</div>
+            <div class="logoutLink"><a href="#">Logout</a></div>
+        </div>
     </div>
-    <div class="tabs-body">
-        <button class="button">Edit</button>
-        <button class="button">Delete</button>
+    <div class="headerBottomDiv"></div>
+</header>
+<div class="bodyWrapper container">
+    <h2>Secondary menu styles</h2>
+    <div>
+        <ul class="nav nav-tabs">
+            <li><a href="#">Clients</a></li>
+            <li class="verticalSeparator">|</li>
+            <li><a href="#">Projects</a></li>
+            <li class="verticalSeparator">|</li>
+            <li class="active"><a href="#">Contracts</a></li>
+            <li class="verticalSeparator">|</li>
+            <li><a href="#">Contractors</a></li>
+            <li class="verticalSeparator">|</li>
+            <li><a href="#">Employees</a></li>
+            <li class="verticalSeparator">|</li>
+        </ul>
     </div>
-</div>
-<div class="separator"></div>
-<h2>Forms with labels and Inputs</h2>
-<div class="forms">
-    <div class="form">
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="address1" class="required">Address Line 1</label>
+    <div class="separator"></div>
+    <h2>section styles</h2>
+    <div>
+        <section>
+            <div class="tab tabTitle section-tab">projects</div>
+            <div class="section-body">
+                <div class="input-field inline-block">
+                    <label for="projectNumber">Project Number</label>
+                    <input type="text" id="projectNumber" class="inputField">
+                </div>
+                <div class="input-field inline-block">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" class="inputField">
+                </div>
+                <div class="input-field inline-block">
+                    <label for="clientName">Client Name</label>
+                    <input type="text" id="clientName" class="inputField">
+                </div>
+                <button class="button button-primary">search</button>
+                <button class="button button-red">clear</button>
+                <button class="button button-primary">create new</button>
             </div>
-            <div class="formLabel">
-                <input type="text" id="address1" class="inputField" required>
+        </section>
+    </div>
+    <div class="separator"></div>
+    <h2>Tabbed Divisions</h2>
+    <div>
+        <div class="tabs">
+            <div class="tab tabTitle">projects</div>
+            <div class="tab tabTitle">contractors</div>
+            <div class="tab tabTitle">commitments</div>
+            <div class="tab tabTitle active-tab">employees</div>
+            <div class="tab tabTitle">site visits</div>
+            <div class="tab tabTitle">payrolls</div>
+            <div class="tab tabTitle">change orders</div>
+            <div class="tab tabTitle">payments</div>
+            <div class="tab tabTitle">attachments</div>
+            <div class="tab tabTitle">notes</div>
+            <div class="tab tabTitle">summary</div>
+        </div>
+        <div class="tabs-body">
+            <button class="button">Edit</button>
+            <button class="button">Delete</button>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <h2>Forms with labels and Inputs</h2>
+    <div>
+        <div class="form">
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="address1" class="required">Address Line 1</label>
+                </div>
+                <div class="formLabel">
+                    <input type="text" id="address1" class="inputField" required>
+                </div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="address2">Address Line 2</label>
+                </div>
+                <div class="formLabel"><input type="text" class="inputField" id="address2"></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="city" class="required">city</label>
+                </div>
+                <div class="formLabel"><input type="text" class="inputField required" id="city"></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="state" class="required">state</label>
+                </div>
+                <div class="formLabel"><input type="text" class="inputField required" id="state"></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="zip" class="required">zip code</label>
+                </div>
+                <div class="formLabel"><input type="text" class="inputField required" id="zip"></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="locale">locale</label>
+                </div>
+                <div class="formLabel">
+                    <select name="locale" id="locale" class="inputField">
+                        <option value="option">Option</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="address2">Address Line 2</label>
+    </div>
+
+    <div class="separator"></div>
+    <h2>Forms with labels and No Inputs</h2>
+    <div>
+        <div class="form">
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="address1" class="required">Address Line 1</label>
+                </div>
+                <div class="formLabel">
+                    <span class="formText">Text</span>
+                </div>
             </div>
-            <div class="formLabel"><input type="text" class="inputField" id="address2"></div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="address2">Address Line 2</label>
+                </div>
+                <div class="formLabel"><span class="formText">Text</span></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="city" class="required">city</label>
+                </div>
+                <div class="formLabel"><span class="formText">Text</span></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="state" class="required">state</label>
+                </div>
+                <div class="formLabel"><span class="formText">Text</span></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="zip" class="required">zip code</label>
+                </div>
+                <div class="formLabel"><span class="formText">Text</span></div>
+            </div>
+            <div class="formRow">
+                <div class="formLabel">
+                    <label for="locale">locale</label>
+                </div>
+                <div class="formLabel">
+                    <span class="formText">Text</span>
+                </div>
+            </div>
         </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="city" class="required">city</label>
+    </div>
+
+    <div class="separator"></div>
+    <div>
+        <div class="table">
+            <div class="tableRow">
+                <div class="tableCell headCell">Contract Number</div>
+                <div class="tableCell headCell">Contract Name</div>
+                <div class="tableCell headCell">Prime Contractor</div>
+                <div class="tableCell headCell">Project Number</div>
+                <div class="tableCell headCell">Project Name</div>
+                <div class="tableCell headCell">Status</div>
             </div>
-            <div class="formLabel"><input type="text" class="inputField required" id="city"></div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell"><a href="#">1234</a></div>
+                <div class="tableCell">Abcd</div>
+                <div class="tableCell">Efgh</div>
+                <div class="tableCell"><a href="#">Klmn</a></div>
+                <div class="tableCell">opqr</div>
+                <div class="tableCell">stuv</div>
+            </div>
         </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="state" class="required">state</label>
-            </div>
-            <div class="formLabel"><input type="text" class="inputField required" id="state"></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="zip" class="required">zip code</label>
-            </div>
-            <div class="formLabel"><input type="text" class="inputField required" id="zip"></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="locale">locale</label>
-            </div>
-            <div class="formLabel">
-                <select name="locale" id="locale" class="inputField">
-                    <option value="option">Option</option>
-                </select>
-            </div>
+        <div class="navigationRow">
+            <button class="navigationButton nav-to-last"></button>
+            <button class="navigationButton nav-prev"></button>
+            <label for="pageSelect">Page</label>
+            <select name="pageSelect" id="pageSelect" class="pageSelect">
+                <option value="1">1</option>
+            </select>
+            <label for="pageSelect">of 18</label>
+            <button class="navigationButton nav-next"></button>
+            <button class="navigationButton nav-to-front"></button>
         </div>
     </div>
 </div>
 
-<div class="separator"></div>
-<h2>Forms with labels and No Inputs</h2>
-<div class="forms">
-    <div class="form">
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="address1" class="required">Address Line 1</label>
-            </div>
-            <div class="formLabel">
-                <span class="formText">Text</span>
-            </div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="address2">Address Line 2</label>
-            </div>
-            <div class="formLabel"><span class="formText">Text</span></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="city" class="required">city</label>
-            </div>
-            <div class="formLabel"><span class="formText">Text</span></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="state" class="required">state</label>
-            </div>
-            <div class="formLabel"><span class="formText">Text</span></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="zip" class="required">zip code</label>
-            </div>
-            <div class="formLabel"><span class="formText">Text</span></div>
-        </div>
-        <div class="formRow">
-            <div class="formLabel">
-                <label for="locale">locale</label>
-            </div>
-            <div class="formLabel">
-                <span class="formText">Text</span>
-            </div>
-        </div>
+<footer class="footer">
+    <div class="footerImage">
+        <div class="footerText1 inline">Terms of Use</div>
+        <div class="footerText2 inline">Privacy Statement</div>
+        <div class="copyrightText inline">&copy 2017 - Trinal,Inc.</div>
     </div>
-</div>
+</footer>
 
 </body>
 </html>

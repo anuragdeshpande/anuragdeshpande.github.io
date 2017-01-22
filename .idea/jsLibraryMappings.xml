@@ -2,6 +2,6 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{Node.js Core}" />
-    <file url="PROJECT" libraries="{0d8ff92822, 1f2e9b5bb7, Platformm, angular, angular-cookies, angular-route, angular-ui-router, api, client, google-apps-script-DefinitelyTyped, google-closure-compiler-DefinitelyTyped, jquery, jquery-2.1.1, jquery.matchHeight, material, materialize, platform}" />
+    <file url="PROJECT" libraries="{0d8ff92822, 1f2e9b5bb7, Platformm, angular, angular-cookies, angular-route, angular-ui-router, api, bootstrap, client, google-apps-script-DefinitelyTyped, google-closure-compiler-DefinitelyTyped, jquery, jquery-2.1.1, jquery.matchHeight, material, materialize, platform}" />
   </component>
 </project>

@@ -1,0 +1,183 @@
+/* Footer Page Styles*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.inline {
+    display: inline;
+}
+
+.footerImage {
+    background-image: url('../assets/footer-shade.jpg');
+    height: 25px;
+    width: 100%;
+    min-width: 320px;
+    position: absolute;
+    bottom: 0;
+}
+
+.footerText1, .footerText2, .copyrightText {
+    font-family: sans-serif;
+    color: white;
+    font-size: 8pt;
+}
+
+.footerText1 {
+    position: relative;
+    left: 12px;
+}
+
+.footerText2 {
+    position: relative;
+    left: 26px;
+}
+
+.copyrightText {
+    position: absolute;
+    right: 20px;
+    top: 4px;
+}
+
+.mainMenu > .menuItem {
+    display: inline-block;
+}
+
+.menuImage, .subMenuContainer {
+    display: inline-block;
+}
+
+.menuImage {
+    vertical-align: top;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.subMenu > li > a, .SubMenuTitle {
+    color: #0c5a11;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.subMenu > li {
+    padding: 1px 0;
+}
+
+.subMenu > li > a:hover {
+    text-decoration: none;
+}
+
+.SubMenuTitle {
+    margin-bottom: 8px;
+}
+
+.subMenu > li > a::before {
+    content: url("../assets/lb.gif");
+    margin-right: 7px;
+}
+
+.SubMenuTitle {
+    font-weight: bold;
+    font-size: medium;
+}
+header{
+    position: fixed;
+    width: 100%;
+}
+
+/* Header Page Styles*/
+.headerTopDiv {
+    background-image: url("../assets/master-right-shade-top.jpg");
+    max-width: 100%;
+}
+
+.headerBottomDiv {
+    background-image: url("../assets/master-right-shade-bottom.jpg");
+    /*margin-top: -13px;*/
+}
+
+.headerTopDiv {
+    background: url("../assets/top/master-right-shade-top.jpg") no-repeat no-repeat right top, url("../assets/top/trinal-logo.jpg") no-repeat left top #6f9120;
+    min-height: 64px;
+    font-family: Serif;
+    color: white;
+    font-size: 12pt;
+    text-align: right;
+}
+
+.headerMenu {
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    top: 29px;
+}
+
+.headerBottomDiv {
+    width: 100%;
+    min-height: 56px;
+    background: url("../assets/master-right-shade-bottom.jpg") no-repeat right bottom, url("../assets/trinal-logo-reflection.jpg") no-repeat left top, url("../assets/filler.jpg");
+    margin-top: -10px;
+}
+
+.welcomeTextHeaderTop, .logoutText {
+    margin: 0 14px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Drop down Menu styles*/
+
+.globeImg {
+    content: url("../assets/GptsIcon.jpg");
+}
+
+.dropdown-menu {
+    border: 2px solid #949429;
+    min-width: 450px !important;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.subMenuWrapper:before{
+    width: 100%;
+    content: 'Test';
+    text-align: right;
+}
+
+.shade {
+    width: 100%;
+    min-height: 16px;
+
+}
+
+.shade-bottom {
+    background: url("../assets/brown-shade-bottom-top.jpg") repeat-x;
+}
+
+.shade-top {
+    background: url("../assets/brown-shade-top-bottom.jpg") repeat-x;
+}
+.menuItem>a{
+    padding: 10px 20px;
+    background: url("../assets/menu-background.jpg") repeat-x;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+}
+.menuItem>a:hover{
+    background: url("../assets/menu-back-hover.jpg") repeat-x;
+    text-decoration: none;
+    color: #0c5a11;
+}
+.mainMenu>.menuItem:before{
+    content: '|';
+    position: relative;
+    color: yellow;
+    right: 2px;
+    bottom: 3px;
+}

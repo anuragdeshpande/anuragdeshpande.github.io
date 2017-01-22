@@ -22,5 +22,6 @@
     <orderEntry type="library" name="1f2e9b5bb7" level="application" />
     <orderEntry type="library" name="angular-route" level="application" />
     <orderEntry type="library" name="0d8ff92822" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>
