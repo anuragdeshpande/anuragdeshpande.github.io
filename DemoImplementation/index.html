@@ -6,7 +6,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/coreStyles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pageStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,7 +18,6 @@
         <div class="headerMenu">
             <ul class="mainMenu">
                 <li class="menuItem"><a href="#">Home</a></li>
-
                 <li class="menuItem"><a href="#">Admin</a></li>
                 <li class="dropdown menuItem">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> GPTS </a>
@@ -41,6 +40,7 @@
                     </div>
                 </li>
                 <li class="menuItem"><a href="#">Reports</a></li>
+
                 <li class="menuItem"><a href="#">Imports</a></li>
                 <li class="menuItem"><a href="#">Attachments</a></li>
             </ul>
@@ -96,19 +96,32 @@
     <h2>Tabbed Divisions</h2>
     <div>
         <div class="tabs">
-            <div class="tab tabTitle">projects</div>
-            <div class="tab tabTitle">contractors</div>
-            <div class="tab tabTitle">commitments</div>
-            <div class="tab tabTitle active-tab">employees</div>
-            <div class="tab tabTitle">site visits</div>
-            <div class="tab tabTitle">payrolls</div>
-            <div class="tab tabTitle">change orders</div>
-            <div class="tab tabTitle">payments</div>
-            <div class="tab tabTitle">attachments</div>
-            <div class="tab tabTitle">notes</div>
-            <div class="tab tabTitle">summary</div>
+            <div><a href="#" class="tab tablTitle active-tab">projects</a></div>
+            <div><a href="#" class="tab tablTitle">contractors</a></div>
+            <div><a href="#" class="tab tablTitle">commitments</a></div>
+            <div><a href="#" class="tab tablTitle">employees</a></div>
+            <div><a href="#" class="tab tablTitle">site visits</a></div>
+            <div><a href="#" class="tab tablTitle">payrolls</a></div>
+            <div><a href="#" class="tab tablTitle">change orders</a></div>
+            <div><a href="#" class="tab tablTitle">payments</a></div>
+            <div><a href="#" class="tab tablTitle">attachments</a></div>
+            <div><a href="#" class="tab tablTitle">notes</a></div>
+            <div><a href="#" class="tab tablTitle">summary</a></div>
         </div>
         <div class="tabs-body">
+            <div class="tabContent activeContent" id="projects">Projects Section</div>
+            <div class="tabContent hidden" id="contractors">Contractors Section</div>
+            <div class="tabContent hidden" id="commitments">Commitments Section</div>
+            <div class="tabContent hidden" id="employees">employees Section</div>
+            <div class="tabContent hidden" id="sitevisits">sitevisits Section</div>
+            <div class="tabContent hidden" id="payrolls">payrolls Section</div>
+            <div class="tabContent hidden" id="changeorders">changeOrders Section</div>
+            <div class="tabContent hidden" id="payments">payments Section</div>
+            <div class="tabContent hidden" id="attachments">attachments Section</div>
+            <div class="tabContent hidden" id="notes">notes Section</div>
+            <div class="tabContent hidden" id="summary">Summary Section</div>
+
+
             <button class="button">Edit</button>
             <button class="button">Delete</button>
         </div>
@@ -290,6 +303,24 @@
         <div class="copyrightText inline">&copy 2017 - Trinal,Inc.</div>
     </div>
 </footer>
+<script type="text/javascript">
+    var activeTab = null;
+    $(".dropdown-menu").on("mouseenter", function (e) {
+        $(this).prev().addClass('activeMenuItem');
+    });
+    $(".dropdown-menu").on("mouseleave", function (e) {
+        $(this).prev().removeClass('activeMenuItem');
+    });
 
+    $(document).ready(function(){
+        $(".tabs>div>a").click(function (e) {
+            $(".active-tab").removeClass("active-tab");
+            $(this).addClass("active-tab");
+            $(".activeContent").addClass("hidden").removeClass("activeContent");
+            var label = $(this).html().split(" ").join('').toLocaleLowerCase();
+            $('#'+label).removeClass("hidden").addClass("activeContent");
+        });
+    });
+</script>
 </body>
 </html>

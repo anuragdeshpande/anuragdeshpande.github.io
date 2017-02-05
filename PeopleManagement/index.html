@@ -8,255 +8,419 @@
     <title>People Management</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <link rel="stylesheet" href="css/material.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="https://use.fontawesome.com/0d8ff92822.js"></script>
 </head>
 <body>
 <div class="navbar grey darken-4">
-    <div class="titleDiv row">
+    <div class="titleDiv row no-margin">
         <div class="appIcon"><i class="material-icons medium">supervisor_account</i></div>
         <div class="appTitle">Contacts</div>
     </div>
+
+    <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#search">Search Employee</a></li>
+            <li class="tab"><a href="#create" class="active">Create Employee</a></li>
+        </ul>
+    </div>
 </div>
 <div class="container">
-    <div class="searchField row">
-        <div class="search-field  col m6 offset-m3 s8 offset-s2">
-            <div class="input-field">
-                <i class="material-icons prefix search_icon">search</i>
-                <input id="personID" type="text" class="validate" placeholder="Person ID">
-            </div>
-        </div>
-    </div>
-    <div class="searchResult row hoverable card">
-        <div class="personalInformation col s6">
-            <div class="nameCard">
-                <div class="userIcon"><i class="material-icons medium">person</i></div>
-                <div class="userDetails">
-                    <div class="personName">Shravan Yerabati</div>
-                    <div class="contactDetails">
-                        <div class="designation">Employee (#123456789) |</div>
-                        <div class="workEmail">siri44@siritek.com |</div>
-                        <div class="workPhone">847-956-3381</div>
-                    </div>
-                    <div class="workAddress">1600 Golf Road Suite#1200, Rolling Meadows, IL 60008</div>
+    <div id="search" class="col s12">
+        <div class="searchField row">
+            <div class="search-field  col m6 offset-m3 s8 offset-s2">
+                <div class="input-field">
+                    <i class="material-icons prefix search_icon">search</i>
+                    <input id="personID" type="text" class="" placeholder="Person ID">
                 </div>
             </div>
-            <div class="divider"></div>
-            <div class="personalInformationCard customCard">
+        </div>
+        <div class="searchResult row card">
+            <div class="personalInformation col s6">
+                <div class="nameCard">
+                    <div class="userIcon"><i class="material-icons medium">person</i></div>
+                    <div class="userDetails">
+                        <div class="personName">Shravan Yerabati</div>
+                        <div class="contactDetails">
+                            <div class="designation">Employee (#123456789) |</div>
+                            <div class="workEmail">siri44@siritek.com |</div>
+                            <div class="workPhone">847-956-3381</div>
+                        </div>
+                        <div class="workAddress">1600 Golf Road Suite#1200, Rolling Meadows, IL 60008</div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="personalInformationCard customCard">
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <div class="material-icons entryIcon inline-block">business</div>
+                            <div class="value inline-block">123456789</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">email</i>
+                            <div class="value inline-block">shravan.siritek@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="fa fa-icon fa-id-badge entryIcon"></i>
+                            <div class="value inline-block">071-559-8898</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="material-icons inline-block entryIcon">phone</i>
+                            <div class="value inline-block">9959933315</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">store</i>
+                            <div class="value inline-block">Vendor Name</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="fa fa-icon fa-building-o entryIcon inline-block"></i>
+                            <div class="value inline-block">Client Name</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="fa fa-icon fa-calendar-check-o"></i>
+                            <div class="value inline-block">MM/DD/YYYY</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="fa fa-icon fa-calendar-times-o"></i>
+                            <div class="value inline-block">MM/DD/YYYY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="attachmentcard customCard">
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">Passport</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">OPT/H1 Documents</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">I-90 Forms</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">SSN Documents</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">Offer Letter</div>
+                        </div>
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">DL</div>
+                        </div>
+                    </div>
+                    <div class="entryRow row rowHalfMargin">
+                        <div class="entry col s6">
+                            <i class="material-icons entryIcon inline-block">attach_file</i>
+                            <div class="value inline-block">E-Verifications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="workInformation col s6">
+                <h5>Invoice Details</h5>
+                <div class="divider"></div>
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <div class="material-icons entryIcon inline-block">business</div>
+                        <div class="value inline-block">Invoice #</div>
+                    </div>
+                    <div class="entry col s6 right-align">
                         <div class="value inline-block">123456789</div>
                     </div>
-                    <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">email</i>
-                        <div class="value inline-block">shravan.siritek@gmail.com</div>
-                    </div>
                 </div>
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <i class="fa fa-icon fa-id-badge entryIcon"></i>
-                        <div class="value inline-block">071-559-8898</div>
+                        <div class="value inline-block">Date Generated</div>
                     </div>
-                    <div class="entry col s6">
-                        <i class="material-icons inline-block entryIcon">phone</i>
-                        <div class="value inline-block">9959933315</div>
-                    </div>
-                </div>
-                <div class="entryRow row rowHalfMargin">
-                    <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">store</i>
-                        <div class="value inline-block">Vendor Name</div>
-                    </div>
-                    <div class="entry col s6">
-                        <i class="fa fa-icon fa-building-o entryIcon inline-block"></i>
-                        <div class="value inline-block">Client Name</div>
-                    </div>
-                </div>
-                <div class="entryRow row rowHalfMargin">
-                    <div class="entry col s6">
-                        <i class="fa fa-icon fa-calendar-check-o"></i>
-                        <div class="value inline-block">MM/DD/YYYY</div>
-                    </div>
-                    <div class="entry col s6">
-                        <i class="fa fa-icon fa-calendar-times-o"></i>
+                    <div class="entry col s6 right-align">
                         <div class="value inline-block">MM/DD/YYYY</div>
                     </div>
                 </div>
-            </div>
-            <div class="divider"></div>
-            <div class="attachmentcard customCard">
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">Passport</div>
+                        <div class="value inline-block">Date Recieved</div>
                     </div>
-                    <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">OPT/H1 Documents</div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">MM/DD/YYYY</div>
                     </div>
                 </div>
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">I-90 Forms</div>
+                        <div class="value inline-block">Month</div>
                     </div>
-                    <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">SSN Documents</div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">March</div>
                     </div>
                 </div>
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">Offer Letter</div>
+                        <div class="value inline-block">Cheque/DD</div>
                     </div>
-                    <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">DL</div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">Cheque</div>
                     </div>
                 </div>
                 <div class="entryRow row rowHalfMargin">
                     <div class="entry col s6">
-                        <i class="material-icons entryIcon inline-block">attach_file</i>
-                        <div class="value inline-block">E-Verifications</div>
+                        <div class="value inline-block">Rate</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">$70</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">Hours</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">8</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">OT Hours</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">15</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">Expenses</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">$300</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">Hours</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">8</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">Trans Fees</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">$60</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">Total Fees</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="value inline-block">$450</div>
+                    </div>
+                </div>
+                <div class="entryRow row rowHalfMargin">
+                    <div class="entry col s6">
+                        <div class="value inline-block">&nbsp;</div>
+                    </div>
+                    <div class="entry col s6 right-align">
+                        <div class="divider"></div>
+                        <div class="value inline-block">$10,000.00</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="workInformation col s6">
-            <h5>Invoice Details</h5>
-            <div class="divider"></div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Invoice #</div>
+    </div>
+    <div id="create" class="col s12">
+        <div class="insertForm card">
+            <div class="createEntryTitle">Create Employee</div>
+            <form>
+                <ul class="tabs">
+                    <li class="tab col s3"><a class="active" href="#Personal">Personal</a></li>
+                    <li class="tab col s3"><a href="#Work">Work</a></li>
+                    <li class="tab col s3"><a href="#Invoice">Invoice</a></li>
+                    <li class="tab col s3"><a href="#Attachments">Attachments</a></li>
+                </ul>
+                <div id="Personal" class="col s12 tabBody">
+                    <!--Personal Information Collection-->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="ssn" type="text" class="">
+                            <label for="ssn">SSN</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="personalEmail" type="text" class="">
+                            <label for="personalEmail">Personal Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="vendor" type="text" class="">
+                            <label for="vendor">Vendor Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="client" type="text" class="">
+                            <label for="client">Client Name</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="startDate" type="date" class=" datepicker">
+                            <label for="startDate">Contarct Start Date</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="endDate" type="date" class=" datepicker">
+                            <label for="endDate">Contarct End Date</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">123456789</div>
+                <div id="Work" class="col s12 tabBody">
+                    <!--Work Information Collection-->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="employeeName" type="text" class="" ng-model="empName">
+                            <label for="employeeName">Employee Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="employeeID" type="text" class="" ng-model="empID">
+                            <label for="employeeID">Employee ID</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="designation" type="text" class="" ng-model="designation">
+                            <label for="designation">Designation</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="workEmail" type="text" class="">
+                            <label for="workEmail">Work Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="workPhone" type="tel" class="">
+                            <label for="workPhone">Work Phone</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="address" type="text" class="">
+                            <label for="address">Address</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Date Generated</div>
+                <div id="Invoice" class="col s12 tabBody">
+                    <!--Invoice Details Collection-->
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="invoiceNumber" type="text" class="">
+                            <label for="invoiceNumber">#Invoice Number</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="genDate" type="date" class=" datepicker">
+                            <label for="genDate">Invoice Date Generation</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="recievedDate" type="date" class=" datepicker">
+                            <label for="recievedDate">Invoice Recieved</label>
+                        </div>
+                        <div class="switch col s3">
+                            <label>
+                                Cheque
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                DD
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select>
+                                <option value="" disabled selected>Choose Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                            <label>Invoice Month</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="hours" type="number" class="validate">
+                            <label for="hours">Hours</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="OThours" type="number" class="validate">
+                            <label for="OThours">OT Hours</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="expenses" type="text" class="validate">
+                            <label for="expenses">Expenses</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="transFees" type="text" class="validate">
+                            <label for="transFees">Trans Fees</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="totalFees" type="text" class="validate">
+                            <label for="totalFees">Total Fees</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="totalAmount" type="text" class="validate">
+                            <label for="totalAmount">Total Amount</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">MM/DD/YYYY</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Date Recieved</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">MM/DD/YYYY</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Month</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">March</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Cheque/DD</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">Cheque</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Rate</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">$70</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Hours</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">8</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">OT Hours</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">15</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Expenses</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">$300</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Hours</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">8</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Trans Fees</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">$60</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">Total Fees</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="value inline-block">$450</div>
-                </div>
-            </div>
-            <div class="entryRow row rowHalfMargin">
-                <div class="entry col s6">
-                    <div class="value inline-block">&nbsp;</div>
-                </div>
-                <div class="entry col s6 right-align">
-                    <div class="divider"></div>
-                    <div class="value inline-block">$10,000.00</div>
-                </div>
-            </div>
+                <div id="Attachments" class="col s12 tabBody">Attachments</div>
+
+            </form>
         </div>
     </div>
-
-    <div class="insertForm card">
-        <form>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="employeeName" type="text" class="validate" ng-model="empName">
-                    <label for="employeeName">Employee Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="employeeID" type="text" class="validate" ng-model="empName">
-                    <label for="employeeID">Employee ID</label>
-                </div>
-            </div>
-
-        </form>
-    </div>
-
 </div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('select').material_select();
+        $('ul.tabs').tabs();
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 100 // Creates a dropdown of 15 years to control year
+        });
+    });
+</script>
 </body>
 </html>
 
 https://www.tutorialspoint.com/angularjs/angularjs_upload_file.htm
-

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trinal Styles</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pageStyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="headerTopDiv">
+        <div class="headerMenu">
+            <ul class="mainMenu">
+                <li class="menuItem"><a href="#">Home</a></li>
+                <li class="menuItem"><a href="#">Admin</a></li>
+                <li class="dropdown menuItem">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> GPTS </a>
+                    <div class="dropdown-menu">
+                        <div class="shade shade-top"></div>
+                        <div class="subMenuWrapper">
+                            <div class="menuImage"><img src="assets/GptsIcon.jpg" alt="Menu Icon"></div>
+                            <div class="subMenuContainer">
+                                <div class="SubMenuTitle">Projects and Contractors</div>
+                                <ul class="subMenu">
+                                    <li><a href="">Clients</a></li>
+                                    <li><a href="">Projects</a></li>
+                                    <li><a href="">Contracts</a></li>
+                                    <li><a href="">Contractors</a></li>
+                                    <li><a href="">Employees</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="shade shade-bottom"></div>
+                    </div>
+                </li>
+                <li class="menuItem"><a href="#">Reports</a></li>
+
+                <li class="menuItem"><a href="#">Imports</a></li>
+                <li class="menuItem"><a href="#">Attachments</a></li>
+            </ul>
+        </div>
+        <div class="welcomeText">
+            <div class="userWelcome">Welcome admin@domain.com</div>
+            <div class="logoutLink"><a href="#">Logout</a></div>
+        </div>
+    </div>
+    <div class="headerBottomDiv"></div>
+</header>
+<div class="bodyWrapper container">
+
+</div>
+<script type="text/javascript">
+    $(".dropdown-menu").on("mouseenter", function (e) {
+        $(this).prev().addClass('activeMenuItem');
+    });
+    $(".dropdown-menu").on("mouseleave", function (e) {
+        $(this).prev().removeClass('activeMenuItem');
+    });
+</script>
+</body>
+</html>
